@@ -39,7 +39,7 @@ export default {
 <style scoped>
 form{
     margin-top: 100px;
-    height: 70vh;
+    height: 100vh;
     width: 100%;
     margin-bottom: 300px;
     background-color: #b3e5fc;

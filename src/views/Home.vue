@@ -80,8 +80,65 @@ methods:{
     switchAnnonce(){
         this.showAnnonce=!this.showAnnonce
     }
+},
+mounted()
+{
+    window.addEventListener('load',()=>{
+
+let slider=document.querySelector('.cont_slide')
+let move=null
+let count=0
+
+function avance(){
+    move=-1
+    slider.style.transition=`0.5s`
+    slider.style.transform=`translate{-400px}`
+    modif()
 }
+
+function modif(){
+    if(move===-1){
+        slider.appendChild(slider.firstElementChild)
+    }else{
+        slider.prepend(slider.lastElementChild)
+    }
+    slider.style.transition="none"
+    slider.style.transform=`translate(10px)`
 }
+
+setInterval(avance,1000)
+})
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+
+}}
 </script>
 
 <style scoped>
@@ -127,7 +184,7 @@ methods:{
 .portion1{
     background-color: rgb(202, 196, 190);
     width: 100%;
-    height: 50vh;
+    height: 65vh;
     background-image: url('../assets/Images/visu-construction-immobiliere-metiers.jpeg.crdownload');
 }
 .theme{
@@ -170,7 +227,7 @@ methods:{
 .portion2{
     background-color: rgb(230, 224, 217);
     width: 100%;
-    height: 50vh; 
+    height: 65vh; 
 }
 .portion2 .cont_slide{
     display: flex;
