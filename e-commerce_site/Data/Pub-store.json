@@ -1,0 +1,128 @@
+[
+    {
+      "titre": "Vetements",
+      "card": [
+        {
+            "image":"vetement1.jpg",
+            "name_product":"Chemise Hawaïenn",
+            "price":"3000"
+        },
+        {
+            "image":"vetement2.png",
+            "name_product":"chino",
+            "price":"2500"
+        },
+        {
+            "image":"vetement3.jpg",
+            "name_product":"T-shirt blanc",
+            "price":"2000"
+        },
+        {
+            "image":"vetement4.jpg",
+            "name_product":"T-shirt giricolo nera",
+            "price":"2500"
+        }
+      ]
+    },
+    {
+        "titre": "Supermarché",
+        "card": [
+          {
+              "image":"Sup1.jpg",
+              "name_product":"Oats Quaker - Flocons d'avoine en boîte 500Grs",
+              "price":"1,200"
+          },
+          {
+              "image":"Sup2.jpg",
+              "name-product":"Joky Sardine _ 125G",
+              "price":"375"
+          },
+          {
+              "image":"Sup3.jpg",
+              "name_product":"Kirène Pack Eau Minérale - 5L X 4",
+              "price":"4,000"
+          },
+          {
+              "image":"Sup4.jpg",
+              "name_product":"Dinor Huile Végétale Dinor 90Cl",
+              "price":"1,200"
+          }
+        ]
+      },
+      {
+        "titre": "Téléphones",
+        "card": [
+          {
+              "image":"Tel1.jpg",
+              "name_product":"Samsung Galaxy A03 Core ",
+              "price":"54,650"
+          },
+          {
+              "image":"Tel2.jpg",
+              "name_product":"Tecno POVA Neo",
+              "price":"60000"
+          },
+          {
+              "image":"Tel3.jpg",
+              "name_product":"Huawei Nova 9SE - 6.78",
+              "price":"160,500"
+          },
+          {
+              "image":"Tel4.jpg",
+              "name_product":"Tecno Pop 6 Go",
+              "price":"48,500"
+          }
+        ]
+      },
+      {
+        "titre": "Chaussures",
+        "card": [
+          {
+              "image":"ch1.jpg",
+              "name_product":"Baskets Class Pour Homme",
+              "price":"3,400"
+          },
+          {
+              "image":"ch2.jpg",
+              "name_product":"Baskets Pour Homme",
+              "price":"4,490"
+          },
+          {
+              "image":"ch3.jpg",
+              "name_product":"WETIKE Baskets En Cuir Décontractées",
+              "price":"3,400 "
+          },
+          {
+              "image":"Ch4.jpg",
+              "name_product":"Baskets De Mode A Lacets",
+              "price":"4,480"
+          }
+        ]
+      },
+      {
+        "titre": "Électronique",
+        "card": [
+          {
+              "image":"el1.jpg",
+              "name_product":"Nasco Slim TV LED 32",
+              "price":"54,450"
+          },
+          {
+              "image":"el2.jpg",
+              "name_product":"Réfrigérateur 2 Battants",
+              "price":"64,900"
+          },
+          {
+              "image":"el3.jpg",
+              "name_product":"Système Audio ",
+              "price":"25,750"
+          },
+          {
+              "image":"el4.jpg",
+              "name_product":"Enceinte Bluetooth - Noir",
+              "price":"5,900 "
+          }
+        ]
+      }
+    
+  ]

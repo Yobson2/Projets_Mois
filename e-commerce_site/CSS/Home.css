@@ -11,7 +11,7 @@ body{
 }
 header{
     width: 100%;
-    height: 100px;
+    height: 120px;
     background-color: #4dabf7;
     border: 1px solid black;
     border: none;
@@ -21,9 +21,8 @@ header{
     top: 0;
 }
 header .header-image{
-    width: 300px;
-    height: 100px;
-    border: 1px solid black;
+    width: 200px;
+    height: 120px;
 }
 .header-image>img{
 width: 100%;
@@ -107,7 +106,8 @@ header .header-connexio-bracket{
 
 .bloc-articles{
     width: 70%;
-    height: 500px;
+    height: 600px;
+    border-radius: 10px;
     border: 0.3px solid black;
     margin: 10px auto;
     display: flex;
@@ -150,18 +150,79 @@ header .header-connexio-bracket{
 .articles-carousel{
     flex: 1;
     height: 100%;
+    position: relative;
+    width: 400px; 
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
     border: 0.5px solid black;
+    z-index: 0;
 }
-.articles-carousel>img{
+.slide{
+    position: absolute;
+    top:0;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s;
+    background-color: #4dabf7;
+    z-index: 1;
+}
+.articles-carousel>.slide>img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+}
+button{
+    background: none;
+    border: none;
+}
+button .fas{
+    color: rgba(255, 255, 255, .5);
+}
+.btn-slide{
+    position:absolute;
+    top:50%;
+    z-index: 10;
+
+    height: 5.5rem;
+    width: 5.5rem;
+    cursor: pointer;
+}
+.prev{
+    left:3rem;
+    transform: translate(-50%, -50%);
+}
+.next{
+    right: 3rem;
+    transform: translate(50%, -50%); 
+}
+.dots-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.dot{
+    width: 25px;
+    height: 5px;
+    margin: 15px 5px;
+    border-radius: .5rem;
+    background: rgba(39,39,39, .5);
+    cursor: pointer;
+}
+.dot.active{
+background:#272727;
 }
 
 /* mini modal-page */
 .modal-page{
     position: absolute;
     top: 10%;
-    left: 80%;
+    left: 84%;
     width: 350px;
     height: 500px;
     background-color: #4dabf7;
@@ -188,21 +249,29 @@ header .header-connexio-bracket{
 }
 .modal-btn .btn-insc{
    width: 120px;
-   height: 40px;
+   height: 50px;
    border-radius: 9px;
    font-weight: bold;
    background-color:  #F7F7F7;
    padding: auto;
+}
+.btn-conn>a{
+    text-decoration: none;
+    font-size: 15px;
+}
+.btn-insc>a {
+    text-decoration: none;
+    font-size: 15px;
 }
 .btn-insc:hover{
     background-color: #4dabf7;
 }
 .modal-btn .btn-conn{
   width: 100px;
-   height: 40px;
+   height: 50px;
    border-radius: 9px;
    font-weight: bold;
-   background-color:  #F7F7F7;
+   background-color: #F7F7F7;
    padding: auto;
 }
 .btn-conn:hover{
@@ -226,9 +295,10 @@ header .header-connexio-bracket{
 .article-card{
     border: 1px solid black;
     width: 70%;
-    height: 350px;
+    height: 400px;
     margin: 20px auto;
     background-color: #4dabf7;
+    position: relative;
     
 }
 .article-theme{
@@ -263,12 +333,12 @@ header .header-connexio-bracket{
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
-    /* background-color: #F7F7F7; */
+    position: absolute;
 }
 .card-data{
     margin-top: 30px;
     min-width: 250px;
-    height: 250px;
+    height: 300px;
     border: 0.8px solid #05080b;
     box-shadow: 5px 4px 18px 1px #000;
     border-radius: 10px;
@@ -310,6 +380,26 @@ header .header-connexio-bracket{
 }
 .like{
     font-size: 20px;
+}
+.like-red{
+    color: red;
+}
+
+@media screen and (width: 1109px) {
+    
+  }
+@media screen and (width: 1109px) {
+    
+  }
+
+@media screen and (width: 1109px) {
+    
+  }
+@media screen and (width: 1109px) {
+    
+  }
+ @media screen and (width: 1109px) {
+    
 }
 
 

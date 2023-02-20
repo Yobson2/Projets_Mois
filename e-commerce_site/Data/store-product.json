@@ -1,0 +1,192 @@
+[
+    {   "_id":1,
+        "card":[
+          {
+            "image":"",
+            "sous_images":[
+                "",
+                "",
+                ""
+            ],
+            "nom_product":"my product",
+            "price":"30 000",
+            "articles_similaires":[
+               {
+                
+               }
+            ]
+          }
+        ]
+    },
+    {   "id":2,
+        "card":[
+          {
+            "image":"",
+            "sous_images":[
+                "",
+                "",
+                ""
+            ],
+            "nom_product":"my second product",
+            "price":"3000",
+            "articles_similaires":[
+               {
+                
+               }
+            ]
+          }
+        ]
+    },
+    {   "id":3,
+        "card":[
+          {
+            "image":"",
+            "sous_images":[
+                "",
+                "",
+                ""
+            ],
+            "nom_product":"",
+            "price":"",
+            "articles_similaires":[
+               {
+                
+               }
+            ]
+          }
+        ]
+    },
+    {   "id":4,
+        "card":[
+          {
+            "image":"",
+            "sous_images":[
+                "",
+                "",
+                ""
+            ],
+            "nom_product":"",
+            "price":"",
+            "articles_similaires":[
+               {
+                
+               }
+            ]
+          }
+        ]
+    },
+    {   "id":5,
+        "card":[
+          {
+            "image":"",
+            "sous_images":[
+                "",
+                "",
+                ""
+            ],
+            "nom_product":"",
+            "price":"",
+            "articles_similaires":[
+               {
+                
+               }
+            ]
+          }
+        ]
+    },
+    {   "id":6,
+        "card":[
+          {
+            "image":"",
+            "sous_images":[
+                "",
+                "",
+                ""
+            ],
+            "nom_product":"",
+            "price":"",
+            "articles_similaires":[
+               {
+                
+               }
+            ]
+          }
+        ]
+    },
+    {   "id":7,
+        "card":[
+          {
+            "image":"",
+            "sous_images":[
+                "",
+                "",
+                ""
+            ],
+            "nom_product":"",
+            "price":"",
+            "articles_similaires":[
+               {
+                
+               }
+            ]
+          }
+        ]
+    },
+    {   "id":8,
+        "card":[
+          {
+            "image":"",
+            "sous_images":[
+                "",
+                "",
+                ""
+            ],
+            "nom_product":"",
+            "price":"",
+            "articles_similaires":[
+               {
+                
+               }
+            ]
+          }
+        ]
+    },
+    {   "id":9,
+        "card":[
+          {
+            "image":"",
+            "sous_images":[
+                "",
+                "",
+                ""
+            ],
+            "nom_product":"",
+            "price":"",
+            "articles_similaires":[
+               {
+                
+               }
+            ]
+          }
+        ]
+    },
+    {   "id":10,
+        "card":[
+          {
+            "image":"",
+            "sous_images":[
+                "",
+                "",
+                ""
+            ],
+            "nom_product":"",
+            "price":"",
+            "articles_similaires":[
+               {
+                
+               }
+            ]
+          }
+        ]
+    }
+]

@@ -3,31 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../CSS/Login.css">
+    <link rel="stylesheet" href="../CSS/NavBar.css">
+    <link rel="stylesheet" href="../CSS/Footer.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yoyo-store.com</title>
 </head>
 <body>
-    <div class="bloc-sign">
-        <form id="inscription">
+    <header>
+        
+        <div class="header-image">
+            <img src="../Logo/Yoyo-store.png" alt="">
+        </div>
+        
+        <div class="header-connexio-bracket">
+            <ul>
+                <li><a href="Home.html">Home</a> </li>
+                <li><a href="#contact">Contact</a> </li>
+                <li><button class="icon-user"><i class="fa-solid fa-user"></i></button></li>
+                <li>
+                    <button class="icon-search">
+                        <i class="fa-solid fa-magnifying-glass"></i> 
+                    </button>
+                </li>
+                <li>
+                    <button class="panier">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </button>
+                </li>
+            </ul>
+            
+            
+        </div>
+    </header>
+    <div class="header-search-barre">
+        <input type="text" id="input_search">
+        <button id="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+   
+        <form id="login">
             <div class="form-header">
                 <h3>Connexion</h3>
             </div>
            <div class="insc-content">
-                <div class="content-input">
+                <div class="row-1">
                     <label>E-mail</label>
                     <input type="email" id="email">
                 </div>
-                <div class="content-input">
+                <div class="row-2">
                     <label>Mot de passe</label>
-                    <input type="text" id="Nom">
-                    <p><a href="">Mot de passe oublié?</a></p>
+                    <input type="password" id="Password">
+                    <p><a href="Password.html">Mot de passe oublié?</a></p>
                 </div>
            </div>
-            <div class="send-party">
-                <button class="Creer">S'identier</button>
-                <p>Nouveau client ? <span>Créer un compte</span></p>
+            <div class="row-3">
+                <p class="erreur">Nom d'utilisateur ou mot de passe incorrect.</p>
+                <button class="btn-creer">S'identier</button>
+                <p>Nouveau client ? <a href="FormInsrire.html">Créer un compte</a></p>
             </div>
         </form>
-    </div>
+
+        <footer>
+            <div class="footer-first-section">
+                <div class="slogen-texte">
+                    <p>
+                        Oui au looks du Moment! <br>
+    Retrouvez les meilleures offres des magasins Yoyo-store
+                    </p>
+                </div>
+                <div class="send-email">
+                    <input type="text" placeholder="Votre email" id="mail">
+                    <input type="submit" placeholder="OK" id="ok-mail">
+                </div>
+            </div>
+            <div class="footer-section-second" id="contact">
+                <p>Besoin d'aide ?</p>
+                <div class="content-email">
+                    <img src="../Logo/mail_icon.png" alt="">
+                    <p>Laissez-nous un message, et vous recontacterons</p>
+                </div>
+                <div class="content-bloc-data">
+                    <form class="content-form-send-sms">
+                      <h3>Nous contacter</h3>
+                      <div class="sms-input">
+                        <label >Objet de la demande</label>
+                        <input type="text" class="txt">
+                      </div>
+                      <div class="sms-input2">
+                        <label >Message</label><br>
+                        <textarea  id="message" ></textarea>
+                      </div>
+                      <div class="sms-input">
+                        <label >Votre Nom</label>
+                        <input type="text" class="txt">
+                      </div>
+                      <div class="sms-input">
+                        <label >Votre Email</label>
+                        <input type="text" class="txt">
+                      </div>
+                      <button type="submit" id="envoi">Envoyer</button>
+                    </form>
+                    <div class="content-plus-el">
+                        <div class="content-tel">
+                            <img src="../Logo/phone_icon.png" alt="">
+                            <p>+225 0789459029</p>
+                            <p>+225 0106459029</p>
+                        </div>
+                        <div class="content-media-link">
+                            <h3>RETROUVEZ-NOUS SUR</h3>
+                            <ul>
+                                <li><a href=""><img src="../Logo/big_facebook_cyan.png" alt=""></a></li>
+                                <li><a href=""><img src="../Logo/big_twitter_cyan.png" alt=""></a></li>
+                                <li><a href=""><img src="../Logo/instagram_cyan.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p id="para">© 2022 Tous droits réservés, Yoyo-store</p>
+        </footer>
+
+        <script src="../JS/Login.js"></script>
 </body>
 </html>

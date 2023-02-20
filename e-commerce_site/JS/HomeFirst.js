@@ -11,5 +11,5 @@ let barreSearch=document.querySelector('.header-search-barre');
 
 checkSearchBarre.addEventListener('click', ()=>{
     barreSearch.classList.toggle('open-barre');
-    console.log('barre')
 })
+

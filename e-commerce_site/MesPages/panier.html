@@ -3,21 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../CSS/Panier.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>panier</title>
 </head>
 <body>
-    <div class="bloc-panier">
+    <div class="modal-panier">
+        <button class="close"><i class="fa-solid fa-xmark"></i></button>
         <h3>Votre panier</h3>
+        <p>Total <span>100</span>Fcfa</p>
         <div class="panier-stockage">
             <div class="panier-article"></div>
             <!-- pas defaut l'article -->
             <p>Votre panier est vide</p>
+            <div class="row">
+                <div class="col-1">
+                  <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
+                </div>
+                <div class="col-2">
+                    <button class="delete-product"><i class="fa-solid fa-trash"></i></i></button>
+                    <h3>Lorem</h3>
+                    <p><span>100</span>Fcfa</p>
+                    <p class="count-product">1</p>
+                </div>
+                
+            </div>
         </div>
         <div class="move-btn-panier">
             <button class="Acheter">Valider la commande</button>
             <button class="cont_achat">continuer vos achats</button>
         </div>
     </div>
+    <script src="../JS/Panier.js"></script>
 </body>
 </html>

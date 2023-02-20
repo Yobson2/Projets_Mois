@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../CSS/Home.css">
+    <link rel="stylesheet" href="../CSS/Panier.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yoyo-store.com</title>
@@ -17,7 +18,7 @@
         
         <div class="header-connexio-bracket">
             <ul>
-                <li><a href="#">Home</a> </li>
+                <li><a href="Home.html">Home</a> </li>
                 <li><a href="#contact">Contact</a> </li>
                 <li><button class="icon-user"><i class="fa-solid fa-user"></i></button></li>
                 <li>
@@ -56,17 +57,66 @@
         </div>
         <div class="articles-carousel">
            
-            <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
+            <div class="slide">
+                <img src="../Images/mediamodifier-kJXGTOY1wLQ-unsplash.jpg" alt="Photo1"/>
+            </div>
+            <div class="slide">
+                <img src="../Images/tobias-tullius-Fg15LdqpWrs-unsplash.jpg" alt="Photo3"/>
+            </div> 
+            <div class="slide">
+                <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="Photo3"/>
+            </div> 
+            <div class="slide">
+                <img src="../Images/alejo-reinoso--IlmDnJg5cg-unsplash.jpg" alt="Photo3"/>
+            </div> 
+    
+            <button class="btn-slide prev"><i class="fas fa-3x fa-chevron-circle-left"></i></button>
+            <button class="btn-slide next"><i class="fas fa-3x fa-chevron-circle-right"></i></button>
         </div>
+    </div>
+    <div class="dots-container">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+        <span class="dot" data-slide="3"></span>
     </div>
     <div class="modal-page">
         <h3>S'inscrire / Se connecter</h3>
         <p>Pas un membre? Créez un compte aujourd'hui</p>
         <div class="modal-btn">
-            <button class="btn-insc">Rejoignez-nous</button>
-            <button class="btn-conn">S'identifier</button>
+            <button class="btn-insc"><a href="FormInsrire.html">Rejoignez-nous</a></button>
+            <button class="btn-conn"><a href="FormLogin.html">S'identifier</a></button>
         </div>
     </div>
+    <!-- modal panier -->
+    <div class="modal-panier">
+        <button class="close"><i class="fa-solid fa-xmark"></i></button>
+        <h3>Votre panier</h3>
+        <p>Total <span>100</span>Fcfa</p>
+        <div class="panier-stockage">
+            <div class="panier-article"></div>
+            <!-- pas defaut l'article -->
+            <p>Votre panier est vide</p>
+            <div class="row">
+                <div class="col-1">
+                  <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
+                </div>
+                <div class="col-2">
+                    <button class="delete-product"><i class="fa-solid fa-trash"></i></i></button>
+                    <h3>Lorem</h3>
+                    <p><span>100</span>Fcfa</p>
+                    <p class="count-product">1</p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="move-btn-panier">
+            <button class="Acheter">Valider la commande</button>
+            <button class="cont_achat">continuer vos achats</button>
+        </div>
+    </div>
+
+    <!--  end modal panier -->
 
     <div class="blocs-articles-pub">
         <h2>Nos Services</h2>
@@ -78,346 +128,51 @@
                     <img src="../Logo/icons8-plus-32.png" alt="">
                 </a>
             </div>
-            <div class="bloc">
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <h3>Loerm</h3>
-                            <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <h3>Loerm</h3>
-                           <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <h3>Loerm</h3>
-                        <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <h3>Loerm</h3>
-                            <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-                
-          </div>
+            <div class="bloc"></div>
           
         </div>
         <div class="article-card">
             <div class="article-theme">
-                <p>Vetements</p>
-                <button class="move-more">
+                <p>Supermarché</p>
+                <a href="Articles.html" class="move-more">
                     <span>J'y vais </span>
                     <img src="../Logo/icons8-plus-32.png" alt="">
-                </button>
+                </a>
             </div>
-            <div class="bloc">
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <h3>Loerm</h3>
-                            <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <p>Loerm</p>
-                        <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <p>Loerm</p>
-                        <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <p>Loerm</p>
-                        <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-                
-          </div>
+            <div class="bloc"></div>
           
         </div>
         <div class="article-card">
             <div class="article-theme">
-                <p>Vetements</p>
-                <button class="move-more">
+                <p>Téléphones</p>
+                <a href="Articles.html" class="move-more">
                     <span>J'y vais </span>
                     <img src="../Logo/icons8-plus-32.png" alt="">
-                </button>
+                </a>
             </div>
-            <div class="bloc">
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <p>Loerm</p>
-                           <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <p>Loerm</p>
-                        <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <p>Loerm</p>
-                        <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <p>Loerm</p>
-                        <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-                
-          </div>
+            <div class="bloc"></div>
           
         </div>
         <div class="article-card">
             <div class="article-theme">
-                <p>Vetements</p>
-                <button class="move-more">
+                <p>Chaussures</p>
+                <a href="Articles.html" class="move-more">
                     <span>J'y vais </span>
                     <img src="../Logo/icons8-plus-32.png" alt="">
-                </button>
+                </a>
             </div>
-            <div class="bloc">
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <p>Loerm</p>
-                           <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <p>Loerm</p>
-                        <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <p>Loerm</p>
-                        <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <p>Loerm</p>
-                        <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-                
-          </div>
+            <div class="bloc"></div>
           
         </div>
         <div class="article-card">
             <div class="article-theme">
-                <p>Vetements</p>
-                <button class="move-more">
+                <p>Électronique</p>
+                <a href="Articles.html" class="move-more">
                     <span>J'y vais </span>
                     <img src="../Logo/icons8-plus-32.png" alt="">
-                </button>
+                </a>
             </div>
-            <div class="bloc">
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <p>Loerm</p>
-                           <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <p>Loerm</p>
-                        <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <p>Loerm</p>
-                        <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-data">
-                    <div class="card-img">
-                        <img src="../Images/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" alt="">
-                    </div>
-                    <div class="name-price-articles">
-                        <div class="content-infos">
-                            <p>Loerm</p>
-                        <p>1000 Fcfa</p>
-                        </div>
-                        <div class="like">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-                
-          </div>
+            <div class="bloc"></div>
           
         </div>
     </div>    
@@ -427,7 +182,7 @@
             <div class="slogen-texte">
                 <p>
                     Oui au looks du Moment! <br>
-Retrouvez les meilleures offres des magasins Yoyo-store
+                    Retrouvez les meilleures offres des magasins Yoyo-store
                 </p>
             </div>
             <div class="send-email">
@@ -483,5 +238,8 @@ Retrouvez les meilleures offres des magasins Yoyo-store
     </footer>
 
     <script src="../JS/HomeFirst.js"></script>
+    <script src="../JS/Slider.js"></script>
+    <script src="../JS/data-json/store-pub.js"></script>
+    <script src="../JS/Panier.js"></script>
 </body>
 </html>
