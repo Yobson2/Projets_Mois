@@ -1,192 +1,249 @@
 [
-    {   "_id":1,
-        "card":[
-          {
-            "image":"",
-            "sous_images":[
-                "",
-                "",
-                ""
-            ],
-            "nom_product":"my product",
-            "price":"30 000",
-            "articles_similaires":[
-               {
-                
-               }
-            ]
-          }
-        ]
-    },
-    {   "id":2,
-        "card":[
-          {
-            "image":"",
-            "sous_images":[
-                "",
-                "",
-                ""
-            ],
-            "nom_product":"my second product",
-            "price":"3000",
-            "articles_similaires":[
-               {
-                
-               }
-            ]
-          }
-        ]
-    },
-    {   "id":3,
-        "card":[
-          {
-            "image":"",
-            "sous_images":[
-                "",
-                "",
-                ""
-            ],
-            "nom_product":"",
-            "price":"",
-            "articles_similaires":[
-               {
-                
-               }
-            ]
-          }
-        ]
-    },
-    {   "id":4,
-        "card":[
-          {
-            "image":"",
-            "sous_images":[
-                "",
-                "",
-                ""
-            ],
-            "nom_product":"",
-            "price":"",
-            "articles_similaires":[
-               {
-                
-               }
-            ]
-          }
-        ]
-    },
-    {   "id":5,
-        "card":[
-          {
-            "image":"",
-            "sous_images":[
-                "",
-                "",
-                ""
-            ],
-            "nom_product":"",
-            "price":"",
-            "articles_similaires":[
-               {
-                
-               }
-            ]
-          }
-        ]
-    },
-    {   "id":6,
-        "card":[
-          {
-            "image":"",
-            "sous_images":[
-                "",
-                "",
-                ""
-            ],
-            "nom_product":"",
-            "price":"",
-            "articles_similaires":[
-               {
-                
-               }
-            ]
-          }
-        ]
-    },
-    {   "id":7,
-        "card":[
-          {
-            "image":"",
-            "sous_images":[
-                "",
-                "",
-                ""
-            ],
-            "nom_product":"",
-            "price":"",
-            "articles_similaires":[
-               {
-                
-               }
-            ]
-          }
-        ]
-    },
-    {   "id":8,
-        "card":[
-          {
-            "image":"",
-            "sous_images":[
-                "",
-                "",
-                ""
-            ],
-            "nom_product":"",
-            "price":"",
-            "articles_similaires":[
-               {
-                
-               }
-            ]
-          }
-        ]
-    },
-    {   "id":9,
-        "card":[
-          {
-            "image":"",
-            "sous_images":[
-                "",
-                "",
-                ""
-            ],
-            "nom_product":"",
-            "price":"",
-            "articles_similaires":[
-               {
-                
-               }
-            ]
-          }
-        ]
-    },
-    {   "id":10,
-        "card":[
-          {
-            "image":"",
-            "sous_images":[
-                "",
-                "",
-                ""
-            ],
-            "nom_product":"",
-            "price":"",
-            "articles_similaires":[
-               {
-                
-               }
-            ]
-          }
-        ]
+  {   "id":1,
+  "card":[
+    { "titre":"Vetements",
+       "sous_titre1":"T-shirts",
+       "sous_titre2":"Chemises",
+       "sous_titre3":"pantalons",
+       "sous_image_3":"vetement2.jpg",
+      "image1":"vetement1.jpg",
+      "image2":"vetement2.jpg",
+      "image3":"vetement3.jpg",
+      "image4":"vetement4.jpg",
+      "image5":"vetement5.jpg",
+      "image6":"vetement6.jpg",
+      "image7":"vetement7.jpg",
+      "image8":"vetement8.jpg",
+      "image9":"vetement9.jpg",
+      "image10":"vetement10.jpg",
+      "image11":"vetement11.jpg",
+      "image12":"vetement12.jpg",
+      "image13":"vetement13.jpg",
+      "nom_product1":"Chemise Hawaïenn",
+      "nom_product2":"chino",
+      "nom_product3":"T-shirt blanc",
+      "nom_product4":"T-shirt giricolo nera",
+      "nom_product5":"Pantalon Chasseur",
+      "nom_product6":"Veste Cardigan",
+      "nom_product7":"Gukbis Ensemble 2 Pièces",
+      "nom_product8":"T-shirt à Manches L",
+      "nom_product9":"T-shirt + Short",
+      "nom_product10":"yemlays ",
+      "nom_product11":"T-shirts D'été",
+      "nom_product12":"T-shirts D'été",
+      "nom_product13":"T-shirt + Short",
+      "price1":"3000",
+      "price2":"2500",
+      "price3":"2000",
+      "price4":"25000",
+      "price5":"4,500",
+      "price6":"7,900",
+      "price7":"6,960 ",
+      "price8":"3000",
+      "price9":"2,800",
+      "price10":"6,500",
+      "price11":"4,130 ",
+      "price12":"3000",
+      "price13":"3000"  
     }
-]
+  ]
+  
+  },{   "id":2,
+  "card":[
+    { "titre":"Supermarché",
+       "sous_titre1":"Samsumg",
+       "sous_titre2":"Apple",
+       "sous_titre3":"Huwai",
+       "sous_image_3":"vetement2.jpg",
+      "image1":"Sup1.jpg",
+      "image2":"Sup2.jpg",
+      "image3":"Sup3.jpg",
+      "image4":"Sup4.jpg",
+      "image5":"Sup4.jpg",
+      "image6":"Sup5.jpg",
+      "image7":"Sup6.jpg",
+      "image8":"Sup7.jpg",
+      "image9":"Sup8.jpg",
+      "image10":"Sup9.jpg",
+      "image11":"Sup10.jpg",
+      "image12":"Sup12.jpg",
+      "image13":"Sup13.jpg",
+      "nom_product1":"Oats Quaker ",
+      "nom_product2":"Joky Sardine",
+      "nom_product3":"Kirène Pack Eau",
+      "nom_product4":"Dinor Huile Végétale",
+      "nom_product5":"my product",
+      "nom_product6":"my product",
+      "nom_product7":"my product",
+      "nom_product8":"my product",
+      "nom_product9":"my product",
+      "nom_product10":"my product",
+      "nom_product11":"my product",
+      "nom_product12":"my product",
+      "nom_product13":"my product",
+      "price1":"1,200",
+      "price2":"375",
+      "price3":"4,000",
+      "price4":"1,200",
+      "price5":"4,500",
+      "price6":"7,900",
+      "price7":"6,960 ",
+      "price8":"3000",
+      "price9":"2,800",
+      "price10":"6,500",
+      "price11":"4,130 ",
+      "price12":"3000",
+      "price13":"3000"  
+    }
+  ]
+  
+  },{   "id":3,
+  "card":[
+    { "titre":"Téléphones",
+    "sous_titre1":"Samsumg",
+    "sous_titre2":"Apple",
+    "sous_titre3":"Huwai",
+       "sous_image_3":"vetement2.jpg",
+      "image1":"Tel1.jpg",
+      "image2":"Tel2.jpg",
+      "image3":"Tel3.jpg",
+      "image4":"Tel4.jpg",
+      "image5":"Tel5.jpg",
+      "image6":"Tel6.jpg",
+      "image7":"Tel7.jpg",
+      "image8":"Tel8.jpg",
+      "image9":"Tel9.jpg",
+      "image10":"Tel10.jpg",
+      "image11":"Tel11.jpg",
+      "image12":"Tel12.jpg",
+      "image13":"Tel13.jpg",
+      "nom_product1":"Samsung Galaxy A03 Core",
+      "nom_product2":"Tecno POVA Neo",
+      "nom_product3":"Huawei Nova 9SE ",
+      "nom_product4":"Tecno Pop 6 Go",
+      "nom_product5":"my product",
+      "nom_product6":"my product",
+      "nom_product7":"my product",
+      "nom_product8":"my product",
+      "nom_product9":"my product",
+      "nom_product10":"my product",
+      "nom_product11":"my product",
+      "nom_product12":"my product",
+      "nom_product13":"my product",
+      "price1":"54,650",
+      "price2":"60000",
+      "price3":"80 000",
+      "price4":"160,500",
+      "price5":"48,500",
+      "price6":"90 000",
+      "price7":"100 000",
+      "price8":"60 000",
+      "price9":"70 000",
+      "price10":"50 000",
+      "price11":"150 000",
+      "price12":"30 000",
+      "price13":"30 000"  
+    }
+  ]
+  
+  },{   "id":4,
+  "card":[
+    { "titre":"Chaussures",
+       "sous_titre1":"Baskets Class Pour Homme",
+       "sous_titre2":"Mocasins",
+       "sous_titre3":"Baskets De Mode A Lacets",
+       "sous_image_3":"vetement2.jpg",
+      "image1":"ch1.jpg",
+      "image2":"ch2.jpg",
+      "image3":"ch3.jpg",
+      "image4":"ch4.jpg",
+      "image5":"ch5.jpg",
+      "image6":"ch6.jpg",
+      "image7":"ch7.jpg",
+      "image8":"ch8.jpg",
+      "image9":"ch9.jpg",
+      "image10":"ch10.jpg",
+      "image11":"ch11.jpg",
+      "image12":"ch12.jpg",
+      "image13":"ch13.jpg",
+      "nom_product1":"Baskets Class",
+      "nom_product2":"mocasins",
+      "nom_product3":"WETIKE Baskets Cuir",
+      "nom_product4":"Baskets De Mode ",
+      "nom_product5":"Baskets Pour H",
+      "nom_product6":"Mocassin Clair",
+      "nom_product7":"Baladeuse Marron",
+      "nom_product8":"Class Sandales",
+      "nom_product9":"Nouvelles Sandales",
+      "nom_product10":"Boots Pour Homme",
+      "nom_product11":"Boot Rouge En Daim",
+      "nom_product12":"SOULIER Homme",
+      "nom_product13":"Cuir En Daim",
+      "price1":"20 000",
+      "price2":"10 000",
+      "price3":"90 000",
+      "price4":"9 000",
+      "price5":"10 000",
+      "price6":"8 000",
+      "price7":"6 000",
+      "price8":"10 000",
+      "price9":"10 000",
+      "price10":"9 000",
+      "price11":"10 000",
+      "price12":"30 000",
+      "price13":"30 000"  
+    }
+  ]
+  
+  },{   "id":5,
+  "card":[
+    { "titre":"Électronique",
+       "sous_titre1":"T-shirts",
+       "sous_titre2":"Chemises",
+       "sous_titre3":"pantalons",
+       "sous_image_3":"vetement2.jpg",
+      "image1":"el1.jpg",
+      "image2":"el2.jpg",
+      "image3":"el3.jpg",
+      "image4":"el4.jpg",
+      "image5":"el5.jpg",
+      "image6":"el6.jpg",
+      "image7":"el7.jpg",
+      "image8":"el8.jpg",
+      "image9":"el9.jpg",
+      "image10":"el10.jpg",
+      "image11":"el11.jpg",
+      "image12":"el12.jpg",
+      "image13":"el13.jpg",
+      "nom_product1":"my product",
+      "nom_product2":"my product",
+      "nom_product3":"my product",
+      "nom_product4":"my product",
+      "nom_product5":"my product",
+      "nom_product6":"my product",
+      "nom_product7":"my product",
+      "nom_product8":"my product",
+      "nom_product9":"my product",
+      "nom_product10":"my product",
+      "nom_product11":"my product",
+      "nom_product12":"my product",
+      "nom_product13":"my product",
+      "price1":"30 000",
+      "price2":"40 000",
+      "price3":"50 000",
+      "price4":"60 000",
+      "price5":"30 000",
+      "price6":"70 000",
+      "price7":"80 000",
+      "price8":"90 000",
+      "price9":"100 000",
+      "price10":"120 000",
+      "price11":"110 000",
+      "price12":"60 000",
+      "price13":"70 000"  
+    }
+  ]
+  
+  }
+   
+]   

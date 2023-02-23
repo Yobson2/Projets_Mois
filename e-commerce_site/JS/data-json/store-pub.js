@@ -1,14 +1,19 @@
 let blocRows = document.querySelectorAll('.bloc');
+let sectionArticles=document.querySelectorAll('.article-card');
+
+console.log(sectionArticles)
+
 
 async function myData() {
     let response = await fetch('../../Data/Pub-store.json');
     let data = await response.json();
-
+    console.log(data)
     data.forEach((cardData, i) => {
         let cardDoc = '';
 
         cardData.card.forEach(item => {
-            cardDoc += `<div class="card-data">
+            cardDoc += `
+            <div class="card-data">
                 <div class="card-img">
                     <img src="../Images/${item.image}" alt="">
                 </div>
@@ -26,19 +31,30 @@ async function myData() {
 
         blocRows[i].innerHTML = cardDoc;
     });
+
 }
 
 myData();
 
 
-async function detailBlocArticles(){
-    let rs= await fetch('../../Data/store-product.json');
-    rs= await rs.json();
-    console.log(rs, 'second data');
+async function detailBlocArticles() {
+    let rs = await fetch('../../Data/store-product.json');
+    rs = await rs.json();
+  
+    let buttonLink = document.querySelectorAll('.move-more');
+    buttonLink.forEach((el_btn, i) => {
+        // nous utilisons l'index i de la boucle forEach pour récupérer
+        //  l'ID correspondant à l'élément en cours. 
 
-    // localStorage.setItem('data', res);
-    
- 
-}
-detailBlocArticles();
-
+      el_btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        let id = rs[i].id;
+        console.log(id);
+        el_btn.id = id;
+        window.location=`Articles.html?${el_btn.id}`
+      });
+    });
+  }
+  
+  detailBlocArticles();
+  

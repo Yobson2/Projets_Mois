@@ -12,8 +12,12 @@ body{
 #inscription{
     width: 90%;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 50px auto;
     padding: 20px;
+    border-radius: 5px;
+    background: #e0e0e0;
+    box-shadow: inset 20px 20px 60px #bebebe,
+                inset -20px -20px 60px #ffffff;
 }
 .form-header{
     width: 100%;
@@ -26,6 +30,7 @@ body{
 .insc-content{
     display: flex;
     flex-direction: column;
+
 }
 .row-1,.row-2{
     display: flex;
@@ -36,6 +41,7 @@ body{
 .content-input{
     flex-basis: 100%;
     margin-bottom: 10px;
+    
 }
 .insc-content label{
     font-size: 1.6rem;
@@ -51,7 +57,67 @@ input[type="text"],input[type="email"],input[type=password]{
     border-radius: 8px;
     border: 1px solid #ccc;
     outline: none;
+    color: #555;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+/* test data input value */
+.message-alerte{
+    color: red;
+    margin: 0px 23px;
+    display: none;
+    float: right;
+   
+    
+}
+
+.content-input>img{
+    float: right;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    display: none;
+    opacity: 0.5;
+}
+.ligne{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px auto;
+    height: 30px;
+    align-items: center;
+
+}
+.l1,.l2,.l3{
+    width: 30%;
+    height: 5px;
+    border-radius: 2px;
+    display: none;
+    font-size: 20px;
+    border: 1px solid black;
+    border: none;
+    font-style: italic;
+}
+.ligne .l1{
+    background: rgb(182,182,13);
+    text-align: center;
+}
+.ligne .l2{
+    background: rgb(151,85,85); 
+    text-align: center;
+}
+.ligne .l3{
+    background: rgb(13, 182, 24);
+    text-align: center; 
+}
+/* End test data input value */
 .row-3{
     display: flex;
     flex-direction: column;
@@ -59,13 +125,14 @@ input[type="text"],input[type="email"],input[type=password]{
 }
 .row-3 .btn-creer{
     width: 100%;
-    max-width: 200px;
+    max-width: 600px;
     height: 50px;
     margin-top: 20px;
     border-radius: 8px;
     padding: 10px;
     font-size: 1.6rem;
     transition: all 0.5s;
+    border: none;
 }
 .btn-creer:hover{
     background-color: #555;

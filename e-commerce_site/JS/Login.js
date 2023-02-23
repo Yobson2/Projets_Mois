@@ -2,10 +2,7 @@ let formLogin=document.querySelector('#login');
 const mail=document.querySelector('#email');
 const password=document.querySelector('#Password');
 const message=document.querySelector('.erreur');
-let user={
-    mail:mail.value,
-    password:password.value
- }
+
 
 
 formLogin.addEventListener('submit',(e)=>{

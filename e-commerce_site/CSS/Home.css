@@ -19,6 +19,7 @@ header{
     justify-content: space-around;
     position: sticky;
     top: 0;
+    z-index: 30;
 }
 header .header-image{
     width: 200px;
@@ -69,28 +70,34 @@ header .header-connexio-bracket{
     color: #F7F7F7;   
 }
 .header-search-barre{
-    width: 550px;
+    width: 900px;
     height: 50px;
-    margin: 0px auto;
+    margin: 40px auto;
     display: none;
-}
-.open-barre{
-    display: flex;
 }
 .header-search-barre #input_search{
     width: 90%;
     height: 100%;
     padding: 3px;
-    border-radius: 5px;
+    border-radius: 10px;
     outline: none;
     font-size: 18px;
 }
+.open-barre{
+    display: flex;
+}
 .header-search-barre #search{
     width: 50px;
+    height: 50px;
     font-size: 29px;
-    border-radius: 5px;
-    border: 0.2px solid black;
+    border-radius: 100%;
+    border: 0.2px solid transparent;
+    border: none;
+    cursor: pointer;
+    box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
 }
+
 #search:active{
     background-color: #4dabf7;
     border: none;
@@ -379,10 +386,17 @@ background:#272727;
     color: white;
 }
 .like{
-    font-size: 20px;
+    font-size: 22px;
+    border: 1px solid black;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+}
+.like:hover{
+    background-color: red;
 }
 .like-red{
-    color: red;
+    background-color: red;
 }
 
 @media screen and (width: 1109px) {
