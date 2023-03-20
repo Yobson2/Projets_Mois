@@ -8,12 +8,13 @@ body{
     font-family: 'Roboto', sans-serif;
     background-color: #BDB76B;
 }
-.section{
+.section2{
     position: relative;
     width: 90%;
     height: auto;
-    /* display: none; */
+    display: none;
     margin: 10px auto;
+    top: 0%;
 }
 
 .header-search-barre{
@@ -71,6 +72,7 @@ body{
    }
    
    .card .img {
+    border-radius: 8px;
     height: 150px;
     margin-top: 1.6em;
     aspect-ratio: 1;
@@ -79,6 +81,11 @@ body{
     margin-bottom: 0.4em;
     box-shadow: -5px -5px 8px #ffffff7a, 
                  5px 5px 8px #a9a9aa7a;
+   }
+   .img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
    }
    
    .card .info {

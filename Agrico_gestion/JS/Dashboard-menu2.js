@@ -5,14 +5,15 @@ let allBloc=document.querySelectorAll('.section');
 
 let blocTwo=allBloc[0]
 let blocThree=allBloc[1]
-let blocFour=allBloc[2]
+let blocFour=document.querySelector('.section2')
 console.log(blocFour,'text')
 
 allLi[0].addEventListener('click',()=>{
-    // blocOne.style.display='block';
     blocTwo.style.display='none';
     blocThree.style.display='none';
-    blocFour.style.display='block'; 
+    blocFour.style.display='none'; 
+    blocOne.style.display='block';
+    
     
 })
 allLi[1].addEventListener('click',()=>{
@@ -21,9 +22,9 @@ allLi[1].addEventListener('click',()=>{
 })
 allLi[2].addEventListener('click',()=>{
     console.log('two')
-    blocOne.style.display='none';
-    blocTwo.style.display='block';
-    blocThree.style.display='none';
+    // blocOne.style.display='none';
+    // blocTwo.style.display='block';
+    // blocThree.style.display='none';
     
 })
 allLi[3].addEventListener('click',()=>{
