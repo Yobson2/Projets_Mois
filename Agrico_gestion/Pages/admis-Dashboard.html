@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../Css/Root-Dashboard.css">
+    <link rel="stylesheet" href="../Css/taches.css">
+    <link rel="stylesheet" href="../Css/registe-paysans.css">
+    <link rel="stylesheet" href="../Css/parametres-root.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bloc-dashboard">
+        <div class="navBar-dashboard">
+            <div class="title">
+                <img src="/Logo/icons8-d-67.png" alt="">
+                <h3>Dashboard admis</h3>
+            </div>
+         <ul>
+            <li><img src="/Logo/icons8-diagramm-67.png" alt=""> <span>Aperçu</span></li>
+            <li><img src="/Logo/icons8-bar-chart-48.png" alt=""> <span>Bilan</span></li>
+            <li><img src="/Logo/icons8-contact-32.png" alt=""> <span>Statuts</span></li>
+            <li><img src="/Logo/icons8-contact-32.png" alt=""> <span>Payement</span></li>
+            <li><img src="/Logo/icons8-settings-24.png" alt=""> <span>Parametres</span></li>
+         </ul>
+         <div class="quit">
+            <button class="deco"><img src="/Logo/icons8-automatic-gearbox-warning-30.png" alt=""> Deconnexion</button>
+         </div>
+        </div>
+<!--         
+        <div class="bloc-contains">
+            <div class="header-dashboard">
+                <div class="theme">
+                    <h2>Apercu</h2>
+                </div>
+                <div class="theme-second">
+                    <ul>
+                        <li><img src="/Logo/icons8-search-64.png" alt=""> <img src="/Logo/icons8-doorbell-24.png" alt=""></li>
+                        <li><span>Jones Ferdinand</span>
+                            <div class="picture">
+                                <img src="/Images/pub2.jpeg" alt="">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="body-dash">
+                <div class="bloc-row1">
+                    <div class="card1">
+                        <p>Nombre Paysans</p>
+                        <h2>18</h2>
+                    </div>
+                    <div class="card1">
+                        <p>Taches</p>
+                        <h2>18</h2>
+                    </div>
+                    <div class="card1">
+                        <p>Autres</p>
+                        <h2>18</h2>
+                    </div>
+                </div>
+                <div class="bloc-row2">
+                    <div class="one">
+                        Paysans: <br> <p> Support</p> 
+                    </div>
+                    <div class="two">
+                        Voir les détails
+                    </div>
+                    <div class="three">
+                        <p>Actifs</p>
+                    </div>
+                    <div class="four">
+                        <p>4238</p>
+                    </div>
+                    <div class="five">
+                        <p>En attente d'une taches</p>
+                    </div>
+                    <div class="six">
+                        <p>1005</p>
+                    </div>
+                </div>
+                <div class="content-admis">
+                    <h3>Paysans-recents</h3>
+                    <p>Voir les détails</p>
+                </div>
+                <div class="admis-recents">
+                    <div class="admis-card">
+                        <div class="photo-admis">
+                            <img src="/Images/pub2.jpeg" alt="">
+                        </div>
+                        <div class="photo-texte">
+                            <h4>Nom fhjdghjfhj</h4>
+                            <p>08 88 34 44 22</p>
+                        </div>
+                    </div>
+                    <div class="admis-card">
+                        <div class="photo-admis">
+                            <img src="/Images/pub2.jpeg" alt="">
+                        </div>
+                        <div class="photo-texte">
+                            <h4>Nom fhjdghjfhj</h4>
+                            <p>08 88 34 44 22</p>
+                        </div>
+                    </div>
+                    <div class="admis-card">
+                        <div class="photo-admis">
+                            <img src="/Images/pub2.jpeg" alt="">
+                        </div>
+                        <div class="photo-texte">
+                            <h4>Nom fhjdghjfhj</h4>
+                            <p>08 88 34 44 22</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <div class="section">
+            <div class="bloc-row1">
+                <button class="card1">
+                    Creer  Taches
+                </button>
+                <button class="card1">
+                    Enregistre Paysans
+                </button> 
+                <button class="card1">
+                    Listes paysans
+                </button>                  
+           </div>
+         <form id="inscription">
+           <div class="insc-content">
+            <div class="col1-photo">
+                 <div class="photo">
+    
+                 </div>
+                     <button class="add"><img src="../Logo/icons8-plus-50.png" alt=""></button>   
+            </div>
+                <div class="row-1">
+                    <div class="content-input">
+                        <input type="text" id="Nom" placeholder="Nom">
+                    </div>
+                    <div class="content-input">
+                        <input type="text" id="Prenom" placeholder="Prenom">
+                    </div>
+                </div>
+                <div class="row-2">
+                    <div class="content-input">
+                        <input type="email" id="email" placeholder="E-mail">
+                    </div>
+                    <div class="content-input">
+                        <input type="tel" id="tel" placeholder="Tel">
+                    </div>
+                </div>
+           </div>
+            <div class="row-3">
+                <button class="btn-creer">Créer</button>
+            </div>
+         </form> 
+         <div class="section">
+            <div class="header-search-barre">
+                <input type="text" id="input_search">
+                <button id="search">Ajouter</button>
+            </div>
+                <div class="affiche-taches">
+                        <div class="tache">
+                            <div class="name-tache">
+                                <p>taches</p>
+                            </div>
+                            <div class="delete-tache">
+                                <button><img src="/logo/icons8-trash-can-50.png" alt=""></button>
+                            </div>
+                        </div>
+                        
+                </div>
+         </div>
+         <div class="listes-admis">
+            <div class="card">
+                <div class="img"></div>
+                  <div class="info">
+                    <span>John Doe</span>
+                    <p>Web Dev</p>
+                  </div>  
+                
+            </div>
+            <div class="card">
+                <div class="img"></div>
+                  <div class="info">
+                    <span>John Doe</span>
+                    <p>Web Dev</p>
+                  </div>  
+                
+            </div>
+            <div class="card">
+                <div class="img"></div>
+                  <div class="info">
+                    <span>John Doe</span>
+                    <p>Web Dev</p>
+                  </div>  
+                
+            </div>
+            <div class="card">
+                <div class="img"></div>
+                  <div class="info">
+                    <span>John Doe</span>
+                    <p>Web Dev</p>
+                  </div>  
+                
+            </div>
+            <div class="card">
+                <div class="img"></div>
+                  <div class="info">
+                    <span>John Doe</span>
+                    <p>Web Dev</p>
+                  </div>  
+                
+            </div>
+            <div class="card">
+                <div class="img"></div>
+                  <div class="info">
+                    <span>John Doe</span>
+                    <p>Web Dev</p>
+                  </div>  
+                
+            </div>
+            <div class="card">
+                <div class="img"></div>
+                  <div class="info">
+                    <span>John Doe</span>
+                    <p>Web Dev</p>
+                  </div>  
+                
+            </div>
+            <div class="card">
+                <div class="img"></div>
+                  <div class="info">
+                    <span>John Doe</span>
+                    <p>Web Dev</p>
+                  </div>  
+                
+            </div>
+            
+            
+        </div>   -->
+        <div class="section">
+            <div class="ex"></div>
+            <div class="header-search-barre">
+                <input type="text" id="input_search">
+                <button id="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="affiche-paysans">
+                <div class="card">
+                    <div class="img"></div>
+                      <div class="info">
+                        <span>John Doe</span>
+                        <p>Web Dev</p>
+                      </div>  
+                    
+                </div>
+                <div class="details">
+                    <div class="taches-faite">
+                        <p>Nombres de taches:</p>
+                        <p>12</p>
+                    </div>
+                    <div class="montant">
+                        <p>Salaires:</p>
+                        <p>1200000 FCFA</p>
+                    </div>
+                </div>
+            </div>
+            <button class="paid">
+                Payement via
+            </button>
+    
+            <div class="modal-montant">
+                <button class="del"><img src="../Logo/icons8-multiply-24.png" alt=""></button>
+                <button class="orange">
+                    <img src="../Images/orange.jpeg" alt="">
+                </button>
+                <button class="orange">
+                    <img src="../Images/moov.jpeg" alt="">
+                </button>
+                <button class="orange">
+                    <img src="../Images/mtn-money.jpg" alt="">
+                </button>
+                <button class="orange">
+                    <img src="../Images/wave.png" alt="">
+                </button>
+            </div>
+            <div class="card-number">
+                <button class="del"><img src="../Logo/icons8-multiply-24.png" alt=""></button>
+                <input type="text" id="number">
+                <button class="del2">Transfert</button>
+            </div>
+        </div>
+        
+    
+         
+    </div>
+    </div>
+             
+       
+           
+    </div>
+    
+
+    <script src="../JS/Dashboard-menu2.js"></script>
+</body>
+</html>

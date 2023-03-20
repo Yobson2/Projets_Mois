@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*,::before,::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #BDB76B;
+}
+
+
+.inputbox {
+    position: relative;
+    width: 300px;
+    padding-top: 20px;
+  }
+  
+  .inputbox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+  }
+  
+  .inputbox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 10px 10px;
+    font-size: 1em;
+    color: #8f8f8f;
+    letter-spacing: 00.05em;
+    transition: 0.5s;
+    pointer-events: none;
+  }
+  
+  .inputbox input:valid ~span,
+  .inputbox input:focus ~span {
+    color: #45f3ff;
+    transform: translateX(-10px) translateY(-34px);
+    font-size: 0,75em;
+  }
+  
+  .inputbox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #45f3ff;
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+  }
+  
+  .inputbox input:valid ~i,
+  .inputbox input:focus ~i {
+    height: 44px;
+  }
+
+
+  #login{
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+    background: #e0e0e0;
+    box-shadow: inset 20px 20px 60px #bebebe,
+                inset -20px -20px 60px #ffffff;
+}
+.form-header{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-header>h3{
+    font-size: 2rem;
+}
+.insc-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.row-3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.erreur{
+    text-align: center;
+    color: red;
+    font-size: 1.4rem;
+    display: none;
+}
+.correct_erreur{
+    display: block;
+}
+.row-3 .btn-creer{
+    width: 100%;
+    max-width: 100px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1.2rem;
+    transition: all 0.5s;
+    border: none;
+}
+.btn-creer:hover{
+    background-color: #555;
+    color: #F7F7F7;
+}
+.row-3:nth-child(3){
+   font-size: 1.4rem; 
+}
+.row-3>p>a{
+    text-decoration: none;
+    color: #4dabf7;
+}
+
+@media (max-width: 540px) {
+    #login{
+        padding: 10px;
+    }
+    .form-header>h3{
+        font-size: 1.6rem;
+    }
+    input[type="text"],input[type="email"]{
+        font-size: 1.4rem;
+    }
+}

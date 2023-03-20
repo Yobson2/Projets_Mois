@@ -1,0 +1,20 @@
+site : https://www.agricom.fr/
+
+https://www.agricom.co.nz/contact-us
+
+Trello - https://trello.com/
+Trello est une plateforme de gestion de tâches très populaire qui permet aux utilisateurs de créer des tableaux, des listes et des cartes pour organiser leurs projets. Il est possible de collaborer avec d'autres utilisateurs et d'affecter des tâches à des membres de l'équipe.
+
+Asana - https://asana.com/
+Asana est une autre plateforme de gestion de tâches qui permet aux utilisateurs de créer des projets, des tâches et des sous-tâches, ainsi que de collaborer avec d'autres membres de l'équipe. Les utilisateurs peuvent également ajouter des commentaires et des pièces jointes aux tâches.
+
+TSheets - https://www.tsheets.com/
+TSheets est une application de suivi de temps et de présence qui permet aux employeurs de suivre les heures de travail de leurs employés. Les travailleurs peuvent également utiliser l'application pour enregistrer leur temps de travail, ainsi que pour effectuer des demandes de congé et des demandes de vacances.
+
+Connecteam - https://connecteam.com/
+Connecteam est une application de gestion d'entreprise qui offre une gamme de fonctionnalités, y compris un suivi des tâches, un suivi des heures de travail, une gestion de la paie et une communication interne. Les utilisateurs peuvent également personnaliser l'application en fonction de leurs besoins spécifiques.
+
+AgriWebb - https://www.agriwebb.com/
+
+dashboard:
+https://app.uizard.io/templates/JJxOWGaOYlsgOn85G6vA?_gl=1*16ntk0v*_ga*NDI5MDY1MTUyLjE2NzgyMDU1MjM.*_ga_FV1FRPC5G4*MTY3ODM1ODU5My4yLjEuMTY3ODM1OTQ3OS4xMC4wLjA.

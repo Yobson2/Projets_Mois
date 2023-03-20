@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*,::before,::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #BDB76B;
+}
+
+.section{
+    position: relative;
+    width: 90%;
+    /* border: 1px solid black; */
+    height: auto;
+}
+
+.bloc-row1{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100px;
+    
+}
+.card1{
+    border: 1px solid black;
+    border: none;
+    margin-left: 10px;
+    width: 100px;
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #0000FF; */
+}
+.card1:hover {
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 5px #3b83f65f;
+    color: #fff;
+  }
+
+  /* formulaire */
+
+  #inscription{
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+    background: #e0e0e0;
+    box-shadow: inset 20px 20px 60px #bebebe,
+                inset -20px -20px 60px #ffffff;
+}
+
+.insc-content{
+    display: flex;
+    flex-direction: column;
+
+}
+.row-1,.row-2{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.col1-photo{
+    width: 40%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 8%;
+    left: 65%;
+    
+}
+.photo{
+    width: 50%;
+    border-radius: 10px;
+    height: 80px;
+    margin: 0px auto;
+    border: 1px solid black;
+    background-color: blue;
+}
+.add{
+    display: block;
+    margin: 0px auto;
+    border: none;
+    border-radius: 60px;
+    width: 20px;
+    height: 20px;
+}
+.add>img{
+    width: 100%;
+    height: 100%;
+}
+.content-input{
+    flex-basis: 100%;
+    margin-bottom: 10px;
+    
+}
+input[type="text"],input[type="email"],input[type="tel"]{
+    width: 60%;
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    color: #555;
+    box-shadow: 0px 1.5px 0px 0px #858585;
+    padding: .5rem;
+    transition: all 200ms ease-in-out;
+    opacity: .8;
+    font-size: 1.2rem;
+    font-style: oblique;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+/* End test data input value */
+.row-3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.row-3 .btn-creer{
+    width: 100%;
+    max-width: 600px;
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1.6rem;
+    transition: all 0.5s;
+    border: none;
+}
+.btn-creer:hover{
+    background-color: #555;
+    color: #F7F7F7;
+}
+.row-3>p{
+   font-size: 1.4rem; 
+}
+.row-3>p>a{
+    text-decoration: none;
+    color: #4dabf7;
+}
+
+@media (max-width: 540px) {
+    #inscription{
+        padding: 10px;
+    }
+    .form-header>h3{
+        font-size: 1.6rem;
+    }
+    input[type="text"],input[type="email"]{
+        font-size: 1.4rem;
+    }
+}
