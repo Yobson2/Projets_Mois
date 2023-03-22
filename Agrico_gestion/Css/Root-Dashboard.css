@@ -217,7 +217,7 @@ justify-content: space-around;
   box-shadow: -5px 5px #333;
   transition: all .2s ease-in-out;
   cursor: pointer;
-  width: 400px;
+  width: 200px;
 }
 .five {
     grid-column: 1 / 2;

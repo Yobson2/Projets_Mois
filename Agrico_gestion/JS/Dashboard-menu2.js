@@ -6,38 +6,59 @@ let allBloc=document.querySelectorAll('.section');
 let blocTwo=allBloc[0]
 let blocThree=allBloc[1]
 let blocFour=document.querySelector('.section2')
+let blocFive=document.querySelector('.bilan')
+let blocStatuts=document.querySelector('.statuts')
 console.log(blocFour,'text')
 
 allLi[0].addEventListener('click',()=>{
     blocTwo.style.display='none';
+    blocFive.style.display='none';
     blocThree.style.display='none';
+    blocStatuts.style.display='none';
     blocFour.style.display='none'; 
     blocOne.style.display='block';
     
     
 })
 allLi[1].addEventListener('click',()=>{
+    blocFour.style.display='none'; 
     blocOne.style.display='none';
+    blocTwo.style.display='none';
+    blocStatuts.style.display='none';
+    blocThree.style.display='none';
+    blocFive.style.display='block';
+    
+    console.log('bilan')
     
 })
 allLi[2].addEventListener('click',()=>{
     console.log('two')
-    // blocOne.style.display='none';
-    // blocTwo.style.display='block';
-    // blocThree.style.display='none';
+    blocOne.style.display='none';
+    blocThree.style.display='none';
+    blocFour.style.display='none';
+    blocFive.style.display='none';
+    blocStatuts.style.display='block';
     
 })
 allLi[3].addEventListener('click',()=>{
     console.log('three')
-    blocFour.style.display='block'; 
     blocOne.style.display='none';
     blocTwo.style.display='none';
-    blocThree.style.display='none';   
+    blocThree.style.display='none';
+    blocFive.style.display='none';
+    blocStatuts.style.display='none';   
+    blocFour.style.display='block'; 
+    
 })
 allLi[4].addEventListener('click',()=>{
+    console.log('content 4')
     blocOne.style.display='none';
-    blocTwo.style.display='block';
+    blocFive.style.display='none';
+    blocFour.style.display='none';
+    blocStatuts.style.display='none';
     blocThree.style.display='none';
+    blocTwo.style.display='block';
+   
 })
 
 

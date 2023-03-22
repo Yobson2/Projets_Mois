@@ -14,11 +14,8 @@ allLi[1].addEventListener('click',()=>{
 })
 allLi[2].addEventListener('click',()=>{
     blocOne.style.display='none';
-    
-})
-allLi[3].addEventListener('click',()=>{
-    blocOne.style.display='none';
     blocFour.style.display='block';
+    
 })
 
 
