@@ -59,13 +59,12 @@ body{
 
 /* my table */
 .tableau{
-    border: 1px solid black;
+    border: 0.4px solid black;
     border: none;
     width: 80%;
     height: auto;
     padding: 20px;
     margin: 10px auto; 
-    /* background-color: aliceblue;   */
 }
 table{
     width: 100%;
@@ -86,6 +85,11 @@ tr,td{
 .choose-check{
     text-align: center;
     background-color: #555;
+}
+.choix{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
 }
 
 tr:nth-child(odd) {

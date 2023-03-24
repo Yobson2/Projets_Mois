@@ -10,39 +10,35 @@
 <body>
     <form id="inscription">
         <div class="form-header">
-            <h3>Créer un compte super-admis</h3>
+            <h3>S'inscrire</h3>
         </div>
        <div class="insc-content">
         <div class="col1-photo">
              <div class="photo">
-
+                <p>Photo</p>
              </div>
-                 <button class="add"><img src="../Logo/icons8-plus-50.png" alt=""></button>   
+             <input type="file" name="image" accept="image/*" class="fichier">
         </div>
             <div class="row-1">
                 <div class="content-input">
-                    <label>Nom</label>
-                    <input type="text" id="Nom">
+                    <input type="text" id="Nom" placeholder="Nom">
                     <img src="../Logo/icons8-check-mark-button-48.png" alt="" id="check">
                 <span class="message-alerte">Choisisez un Nom entre 3 et 10</span>
                 </div>
                 <div class="content-input">
-                    <label>Prenom</label>
-                    <input type="text" id="Prenom">
+                    <input type="text" id="Prenom" placeholder="Prenom">
                     <img src="../Logo/icons8-check-mark-button-48.png" alt="" id="check">
                 <span class="message-alerte">Choisisez un Prenom entre 3 et 24</span>
                 </div>
             </div>
             <div class="row-2">
                 <div class="content-input">
-                    <label>E-mail</label>
-                    <input type="email" id="email">
+                    <input type="email" id="email" placeholder="E-mail">
                     <img src="../Logo/icons8-check-mark-button-48.png" alt="" id="check1">
                 <span class="message-alerte">Rentrez un email valide</span>
                 </div>
                 <div class="content-input">
-                    <label>Mot de passe</label>
-                    <input type="password" id="Password">
+                    <input type="password" id="Password" placeholder="Mot de passe">
                     <img src="../Logo/icons8-check-mark-button-48.png" alt="" id="check2">
                     <span class="message-alerte">Un symbole, une lettre minuscule, un chiffre.</span>
                     <div class="ligne">
@@ -54,10 +50,12 @@
             </div>
        </div>
         <div class="row-3">
-            <button class="btn-creer">Créer</button>
+            <button class="btn-creer" type="submit">Créer</button>
             <p>Déja super_admis ? <a href="connexion.html">S'identifier</a></p>
         </div>
 
     </form>
+    <!-- <script src="../JS/DB/Super-admis.js"></script> -->
+    <script src="../JS/inscrit.js"></script>
 </body>
 </html>
