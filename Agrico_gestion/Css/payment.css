@@ -22,7 +22,7 @@ body{
     height: 50px;
     margin: 40px auto;
 }
-.header-search-barre #input_search{
+.header-search-barre #input_search1{
     width: 60%;
     height: 100%;
     padding: 3px;
@@ -33,7 +33,7 @@ body{
 .open-barre{
     display: flex;
 }
-.header-search-barre #search{
+.header-search-barre #search1{
     width: 50px;
     height: 50px;
     font-size: 29px;
@@ -48,7 +48,7 @@ body{
     background-color: #4dabf7;
     border: none;
 }
-.affiche-paysans{
+.affiche-paysans1{
     width: 80%;
     /* border: 1px solid black; */
     height: auto;

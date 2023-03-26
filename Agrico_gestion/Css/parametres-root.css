@@ -310,7 +310,11 @@
     box-shadow: -5px -5px 8px #ffffff7a, 
                  5px 5px 8px #a9a9aa7a;
    }
-   
+   .img>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+   }
    .card .info {
     text-align: center;
     margin-top: 0.4em;

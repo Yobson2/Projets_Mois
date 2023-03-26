@@ -10,7 +10,7 @@ const p=document.querySelector('.photo>p');
 
 
 const imageElement = document.createElement('img');
-
+// let countId=1
 // affiche my photo
 fichier.addEventListener('change', function(event) {
   // Récupérer le fichier sélectionné
@@ -24,27 +24,47 @@ fichier.addEventListener('change', function(event) {
 });
 // createAdmission
 form.addEventListener("submit", function(event) {
-event.preventDefault();
+  event.preventDefault();
   let admis = {
-  nom:nom.value,
-  prenom:prenom.value,
-  password:password.value,
-  fichier:fichier.value,
-  email:email.value
+    nom:nom.value,
+    prenom:prenom.value,
+    password:password.value,
+    fichier:fichier.value,
+    email:email.value
   };
   console.log(admis)
 
-  //Object.values() pour obtenir un tableau des valeurs objet
+  // Vérifier si tous les champs du formulaire ont été remplis
   if (Object.values(admis).every(value => value !== "")) {
-    let id = new Date().getTime();
-    localStorage.setItem("admis_" + id, JSON.stringify(admis));
-    alert("Bravo vous etes super admine");
+
+    // Vérifier si un enregistrement avec les mêmes données existe déjà dans le stockage local
+    let existe = false;
+    for (let i = 0; i < localStorage.length; i++) {
+      let cle = localStorage.key(i);
+      if (cle.startsWith("admis_")) {
+        let enregistrement = JSON.parse(localStorage.getItem(cle));
+        if (enregistrement.nom === admis.nom &&
+            enregistrement.prenom === admis.prenom &&
+            enregistrement.password === admis.password &&
+            enregistrement.fichier === admis.fichier &&
+            enregistrement.email === admis.email) {
+          existe = true;
+          break;
+        }
+      }
+    }
+
+    if (!existe) {
+      // Enregistrer les données du formulaire dans le stockage local avec un nouvel identifiant
+      let id = new Date().getTime();
+      localStorage.setItem(`admis_` + id, JSON.stringify(admis));
+      alert("Bravo vous etes super admine");
+    } else {
+      alert("Cet enregistrement existe déjà");
+    }
+
   } else {
     alert("Veuillez remplir tous les champs du formulaire");
   }
 
 });
-
-
-
-
