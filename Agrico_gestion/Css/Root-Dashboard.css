@@ -6,7 +6,10 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: #BDB76B;
+    background-image: url("/Images/young-woman-controlling-plantation.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    backface-visibility: initial;
 }
 .bloc-dashboard{
     width: 100%;
@@ -108,6 +111,7 @@ body{
 display: flex;
 list-style: none;
 justify-content: space-around;
+padding: 10px;
 }
 .theme-second>ul>li{
     width: 800px;
@@ -117,10 +121,11 @@ justify-content: space-around;
     align-items: center;
 }
 .theme-second>ul>li>img{
-    width: 15px;
-    height: 20px;
+    width: 55px;
+    height: 50px;
     vertical-align: middle;
 }
+
 .picture{
     width: 50px;
     height: 50px;
@@ -148,6 +153,7 @@ justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     height: 100px;
+    margin-top: 50px;
 }
 .card1{
     border: 1px solid black;
@@ -160,121 +166,31 @@ justify-content: space-around;
     border-radius: 20px;
     background-color: white;
     text-align: center;
+    font-weight: bold;
 }
 .card1:hover {
     background-color: #3b82f6;
     box-shadow: 0 0 0 5px #3b83f65f;
     color: #fff;
   }
-.bloc-row2{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(50px, auto);
-    text-align: center;  
-   overflow: hidden;
-   height: auto;
-   width: 80%;
-   margin: 60px auto;
-
-}
-.one {
-    grid-column: 1 / 2;
-    grid-row: 1;
-    border: 1px solid black;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    font-weight: bold;
-    border: solid 4px #333;
-  box-shadow: -5px 5px #333;
-  transition: all .2s ease-in-out;
-  cursor: pointer;
-  width: 400px;
-}
-.two {
-    grid-column: 2 / 2;
-    grid-row: 1;
-    border: 1px solid black;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-   border-radius: 10px;
-   font-weight: bold;
-   border: solid 4px #333;
-  box-shadow: -5px 5px #333;
-  transition: all .2s ease-in-out;
-  cursor: pointer;
-  width: 400px;
-}
-.three {
-    grid-column: 1 / 2;
-    grid-row: 2;
-    border: 1px solid black;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  font-weight: bold;
-  border: solid 4px #333;
-  box-shadow: -5px 5px #333;
-  transition: all .2s ease-in-out;
-  cursor: pointer;
-  width: 200px;
-}
-.five {
-    grid-column: 1 / 2;
-    grid-row: 3;
-    border: 1px solid black;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-   border-radius: 10px;
-   font-weight: bold;
-   border: solid 4px #333;
-  box-shadow: -5px 5px #333;
-  transition: all .2s ease-in-out;
-  cursor: pointer;
-  width: 200px;
-}
-.four {
-    grid-column: 2 / 2;
-    grid-row: 2;
-    border: 1px solid black;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    color: #3b82f6;
-    border: solid 4px #333;
-  box-shadow: -5px 5px #333;
-  transition: all .2s ease-in-out;
-  cursor: pointer;
-  width: 200px;
-}
-.six {
-    grid-column: 2 / 2;
-    grid-row: 3;
-    border: 1px solid black;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    color: #3b82f6;
-    border: solid 4px #333;
-    box-shadow: -5px 5px #333;
-    cursor: pointer;
-    width: 200px;
-}
 
 
 .content-admis{
-    /* margin-top: 30px; */
     display: flex;
     justify-content: space-around;
-    width: 80%;
+    width: 60%;
+    height: auto;
+    font-weight: bold;
+    font-size: 1.5rem;
     margin: 40px auto;
-    border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 1rem;
+    border: .5vmin solid #05060f;
+    box-shadow: .4rem .4rem #05060f;
+
 }
 
 .admis-recents{
-    width: 80%;
+    width: 60%;
     height: auto;
     margin: 20px auto;
     display: flex;
@@ -283,6 +199,7 @@ justify-content: space-around;
     align-items: center;
     padding: 10px;
     border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .admis-card{
     border: 0.4px solid black;
@@ -310,6 +227,7 @@ justify-content: space-around;
     height: 70px;
     border-radius: 50px;
     border: 1px solid black;
+    margin-right: 10px;
 }
 .photo-admis>img{
     width: 100%;
@@ -321,8 +239,14 @@ justify-content: space-around;
  width: 60%;
 }
 .photo-texte>p{
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
+    padding: 5px;
     color: gray;
     word-wrap: break-word;
+}
+.photo-texte>h4{
+    font-size: 1.2rem;
+    width: 100%;
+    text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
 }

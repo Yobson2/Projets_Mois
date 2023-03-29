@@ -5,19 +5,20 @@ let blocFour=document.querySelector('.section')
 allLi[0].addEventListener('click',()=>{
     blocOne.style.display='block';
     blocFour.style.display='none';
-    
 })
+
 allLi[1].addEventListener('click',()=>{
-    blocOne.style.display='none';
-    
-})
-allLi[2].addEventListener('click',()=>{
     blocOne.style.display='none';
     blocFour.style.display='block';
     
 })
 
-
+let deco=document.querySelector('.deco')
+console.log('test',deco)
+deco.addEventListener('click',()=>{
+  console.log("bonjour")
+  window.location.href="../Home.html"
+})
 
 
 
@@ -38,6 +39,7 @@ allCard1[4].addEventListener('click',()=>{
     inscription.style.display='none';
 
 })
+
 
 
 

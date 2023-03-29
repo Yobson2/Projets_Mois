@@ -6,14 +6,16 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: #BDB76B;
+    background-color: #379432;
 }
 
 #inscription{
-    position: relative;
+    position: absolute;
     width: 90%;
     max-width: 600px;
-    margin: 50px auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 20px;
     border-radius: 5px;
     background: #e0e0e0;
@@ -113,7 +115,7 @@ input[type="text"],input[type="email"],input[type=password]{
     border-radius: 5px;
     border: 1px solid #ccc;
     outline: none;
-    color: #555;
+    color:#757552;;
     box-shadow: 0px 1.5px 0px 0px #858585;
     padding: .5rem;
     transition: all 200ms ease-in-out;

@@ -56,7 +56,6 @@ form.addEventListener("submit", function(event) {
 
     if (!existe) {
       // Enregistrer les données du formulaire dans le stockage local avec un nouvel identifiant
-      let id = new Date().getTime();
       localStorage.setItem(`admis_` + id, JSON.stringify(admis));
       alert("Bravo vous etes super admine");
     } else {

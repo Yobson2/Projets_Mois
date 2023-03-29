@@ -32,11 +32,12 @@ allLi[1].addEventListener('click',()=>{
     
 })
 allLi[2].addEventListener('click',()=>{
-    // console.log('two')
+  blocFour.style.display='none'; 
     blocOne.style.display='none';
+    blocTwo.style.display='none';
     blocThree.style.display='none';
-    blocFour.style.display='none';
     blocFive.style.display='none';
+    // console.log('two')
     blocStatuts.style.display='block';
     
 })
@@ -76,6 +77,7 @@ let listes=document.querySelector('.listes-admis');
 allCard1[3].addEventListener('click',()=>{
     blocThree.style.display='none';
     listes.style.display='none';
+    blocFour.style.display='none'; 
     inscription.style.display='block';
 
     // console.log('card1')
@@ -316,23 +318,37 @@ function afficheTaches(data) {
     tab.innerHTML = taches;
     tabSelected.innerHTML = tachesSelected;
   
-    // Ajouter un gestionnaire d'événements à chaque bouton de suppression
-    ///debut test ?//
-    let deleteButtons = document.querySelectorAll('.delete-tache>button');
-    deleteButtons.forEach((button) => {
-      button.addEventListener('click', (event) => {
-        let tache = event.target.parentNode.parentNode.querySelector('.name-tache>p').textContent;
-        supprimerTache(tache);
-        afficheTaches(JSON.parse(localStorage.getItem('taches_')));
-      });
-    });
+    
   }
   
   function supprimerTache(tache) {
-    let taches = JSON.parse(localStorage.getItem('taches_'));
-    taches = taches.filter((item) => item !== tache);
-    localStorage.setItem('taches_', JSON.stringify(taches));
+    let taches = JSON.parse(localStorage.getItem('P1_'));
+    taches = taches.filter((item) => {
+      if(item !== tache){
+        taches.splice(taches.indexOf(item), 1);
+        console.log('my taches:',taches)
+       
+      }
+    });
+    localStorage.setItem('P1_', JSON.stringify(taches));
   }
+let deleteCard=document.querySelector('.Delete');
+let hDelete=document.querySelectorAll('.delete-tache>button')
+let parents=document.querySelectorAll('.tache')
+let deleteButtons = document.querySelectorAll('.Delete');
+function removeCard(parent) {
+  parent.forEach(button => {
+    button.addEventListener('click', (event) => {
+      if(button.classList.contains('Delete')){
+        event.target.closest('.card').remove();
+      }else{
+        event.target.closest('.tache').remove();
+      }
+    });
+  });
+}
+removeCard(deleteButtons)
+removeCard(hDelete)
   
 ////Fin test ?//
 
@@ -371,7 +387,6 @@ function getNomsEnregistrements() {
   }  
   
 //   afficher les elements dans le tableau
-
 let inputNamePaysans = document.querySelector("#name-paysans");
 let inputTaches = document.querySelector("#taches-paysans");
 
@@ -380,27 +395,31 @@ let btnTaches=document.querySelector('.btn-taches');
 btnTaches.addEventListener('click',printTableauRow)
 let data = [];
 let niveaux=[]
+
 function printTableauRow(){
-    let nameP="";
-    let tacheP="";
-    let infosPa={
-        nameP:inputNamePaysans.value,
-        tacheP:inputTaches.value
+    let nameP = inputNamePaysans.value;
+    let tacheP = inputTaches.value;
+    let niveauP = [];
+    let infosPa = {
+        nameP: nameP,
+        tacheP: tacheP,
+        niveauP: niveauP
     }
+
     console.log(infosPa,'my infos')
+
     let tableau = document.querySelector('.element');
 
-    if (data.includes(infosPa)) {
+    let index = data.findIndex(el => el.nameP === nameP && el.tacheP === tacheP);
+    if (index >= 0) {
         return;
     } else {
         data.push(infosPa);
-        let row=""
-        let ran=0;
-        data.forEach((el) => {
-            ran+=1;
-            // console.log(el,'text')
-         row+= `
-         <div class="element-card">
+        let row = "";
+        data.forEach((el, idx) => {
+            let ran = idx + 1;
+            row += `
+            <div class="element-card">
                 <div class="entete2">
                     <p>${ran}-${el.nameP}</p>
                 </div>
@@ -408,37 +427,76 @@ function printTableauRow(){
                     <p>${el.tacheP}</p>
                 </div>
                 <div class="entete2">
-                    <p class="choose-check">
-                        <select  id="niveau-tache">
-                            <option value="En cours" class="niv1">En cours</option>
-                            <option value="terminé" class="niv2">terminé</option>
-                            <option value="non terminé" class="niv3">non terminé</option>
-                        </select>   
-                    </p> 
+                    <div class="choose-check">
+                      <input type="checkbox" id="niveau-tache" value="En cours" name="option"> 
+                      <input type="checkbox" id="niveau-tache" value="terminé" name="option"> 
+                      <input type="checkbox" id="niveau-tache" value="non terminé" name="option">   
+                    </div> 
+                    <button id="Delete"><img src="../Logo/icons8-trash-can-50.png" alt=""></button> 
                 </div>
-           </div>
+            </div>
+
             `
+           
         })
-        tableau.innerHTML=row
-        choose()
-    }  
-    
+       
+        tableau.innerHTML = row;
+        stockNiveau(data)
+        console.log(data,'niveau')
+        
+    }
 }
+
+//creer une fonction qui stock les infos d'un paysans avec son niveau de tache
+function stockNiveau(data) {
+  let checkboxes = document.querySelectorAll('#niveau-tache');
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('click', (e) => {
+      console.log(e.target.value);
+      // data.push(e.target.value)
+      data.forEach((infosPa, index) => {
+        let nevel=infosPa.niveauP
+        nevel.push(e.target.value)
+        console.log(infosPa.niveauP, "niveauP");
+      })
+      console.log('data new',data)
+      localStorage.setItem("status_", JSON.stringify(data));
+    });
+  });
+}
+
+
+
 
 ///choix de niveau
 
-function choose(){
-    let choix = document.querySelector('#niveau-tache');
-    
-    if(choix.value=='En cours' || choix.value=='non terminé'){
-        return;
-    }else{
-        choix.value="30 000"
-        niveaux.push(choix.value)
-        localStorage.setItem("salaires_", JSON.stringify(niveaux));
-    }
-    console.log(niveaux)
+function choose() {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"][name="option"]');
+  let selectedCheckbox = null;
+
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        if (selectedCheckbox !== null && selectedCheckbox !== checkbox) {
+          selectedCheckbox.checked = false;
+          selectedCheckbox = null;
+        }
+        selectedCheckbox = checkbox;
+        checkboxes.forEach((otherCheckbox) => {
+          if (otherCheckbox !== checkbox) {
+            otherCheckbox.disabled = true;
+          }
+        });
+      } else {
+        selectedCheckbox = null;
+        checkboxes.forEach((otherCheckbox) => {
+          otherCheckbox.disabled = false;
+        });
+      }
+    });
+  });
 }
+
   
 
 // recherche des infos pour le payement des paysans
@@ -450,23 +508,37 @@ btns.addEventListener('click',()=>{
     console.log('bonjour')
     getElementByName(payName.value)
 })
-
 function getElementByName(name) {
-    let element = null;
+  let element = null;
+  for (let i = 0; i < localStorage.length; i++) {
+    let key = localStorage.key(i);
+    if (key.startsWith("P1_")) {
+      let record = JSON.parse(localStorage.getItem(key));
+      if (record.nom === name.split(" ")[0] && record.prenom === name.split(" ")[1]) {
+        element = record;
+        break;
+      }
+    }
+  }
+  
+  if (element) {
     for (let i = 0; i < localStorage.length; i++) {
       let key = localStorage.key(i);
-      if (key.startsWith("P1_")) {
-        let record = JSON.parse(localStorage.getItem(key));
-        if (record.nom === name.split(" ")[0] && record.prenom === name.split(" ")[1]) {
-          element = record;
+      if (key.startsWith("status_")) {
+        let record1 = JSON.parse(localStorage.getItem(key));
+        if (record1.nameP === name.split(" ")[0] && record.prenom === name.split(" ")[1]) {
+          record1.push(element.tel,element.fichier)
+          localStorage.setItem(key, JSON.stringify(record));
           break;
         }
       }
     }
-    // return element;
-    console.log(element)
-    getElementP(element)
   }
+  
+  console.log(element);
+  getElementP(element);
+}
+
 
 function getElementP(t){
     let cards=document.querySelector('.affiche-paysans1')
@@ -576,3 +648,10 @@ function getBilans(){
 }
   
 getBilans()  
+
+let deco=document.querySelector('.deco')
+console.log('test',deco)
+deco.addEventListener('click',()=>{
+  console.log("bonjour")
+  window.location.href="../Home.html"
+})
