@@ -23,48 +23,48 @@ fichier.addEventListener('change', function(event) {
   photo.appendChild(imageElement);
 });
 // createAdmission
-// form.addEventListener("submit", function(event) {
-//   event.preventDefault();
-//   let admis = {
-//     nom:nom.value,
-//     prenom:prenom.value,
-//     password:password.value,
-//     fichier:fichier.value,
-//     email:email.value
-//   };
-//   console.log(admis)
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  let admis = {
+    nom:nom.value,
+    prenom:prenom.value,
+    password:password.value,
+    fichier:fichier.value,
+    email:email.value
+  };
+  console.log(admis)
 
-//   // Vérifier si tous les champs du formulaire ont été remplis
-//   if (Object.values(admis).every(value => value !== "")) {
+  // Vérifier si tous les champs du formulaire ont été remplis
+  if (Object.values(admis).every(value => value !== "")) {
 
-//     // Vérifier si un enregistrement avec les mêmes données existe déjà dans le stockage local
-//     let existe = false;
-//     for (let i = 0; i < localStorage.length; i++) {
-//       let cle = localStorage.key(i);
-//       if (cle.startsWith("admis_")) {
-//         let enregistrement = JSON.parse(localStorage.getItem(cle));
-//         if (enregistrement.nom === admis.nom &&
-//             enregistrement.prenom === admis.prenom &&
-//             enregistrement.password === admis.password &&
-//             enregistrement.fichier === admis.fichier &&
-//             enregistrement.email === admis.email) {
-//           existe = true;
-//           break;
-//         }
-//       }
-//     }
+    // Vérifier si un enregistrement avec les mêmes données existe déjà dans le stockage local
+    let existe = false;
+    for (let i = 0; i < localStorage.length; i++) {
+      let cle = localStorage.key(i);
+      if (cle.startsWith("admis_")) {
+        let enregistrement = JSON.parse(localStorage.getItem(cle));
+        if (enregistrement.nom === admis.nom &&
+            enregistrement.prenom === admis.prenom &&
+            enregistrement.password === admis.password &&
+            enregistrement.fichier === admis.fichier &&
+            enregistrement.email === admis.email) {
+          existe = true;
+          break;
+        }
+      }
+    }
 
-//     if (!existe) {
-//       // Enregistrer les données du formulaire dans le stockage local avec un nouvel identifiant
-//       let id = new Date().getTime();
-//       localStorage.setItem(`admis_` + id, JSON.stringify(admis));
-//       alert("Bravo vous etes super admine");
-//     } else {
-//       alert("Cet enregistrement existe déjà");
-//     }
+    if (!existe) {
+      // Enregistrer les données du formulaire dans le stockage local avec un nouvel identifiant
+      let id = new Date().getTime();
+      localStorage.setItem(`admis_` + id, JSON.stringify(admis));
+      alert("Bravo vous etes super admine");
+    } else {
+      alert("Cet enregistrement existe déjà");
+    }
 
-//   } else {
-//     alert("Veuillez remplir tous les champs du formulaire");
-//   }
+  } else {
+    alert("Veuillez remplir tous les champs du formulaire");
+  }
 
-// });
+});
