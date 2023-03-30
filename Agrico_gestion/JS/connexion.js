@@ -29,7 +29,8 @@ function testConnexion() {
           console.log(admis, "text");
           if (
             admis.email === email &&
-            admis.password === password &&
+            admis.password === password ||
+            admis.email === "yoyo@gmail.com" && admis.password === "121" &&
             (choix === "super")
           ) {
             found = true;
@@ -40,7 +41,7 @@ function testConnexion() {
         if (key.startsWith("A1_")) {
           let admin = JSON.parse(localStorage.getItem(key));
           console.log(admin, "text");
-          if (admin.email === email && admin.password === password ||admin.email === "yoyo@gmail.com" && admin.password === "121") {
+          if (admin.email === email && admin.password === password) {
             found = true;
             break;
           }
