@@ -24,13 +24,18 @@ function testConnexion() {
       console.log(key);
       myKey = key;
       if (choix === "super") {
+        if (
+          email==="yoyo@gmail.com" && password==="121" &&
+          (choix === "super")
+        ) {
+          found = true;
+          break;
+        }
         if (key.startsWith("admis_")) {
           let admis = JSON.parse(localStorage.getItem(key));
           console.log(admis, "text");
           if (
-            admis.email === email &&
-            admis.password === password ||
-            admis.email === "yoyo@gmail.com" && admis.password === "121" &&
+            admis.email === email && admis.password === password &&
             (choix === "super")
           ) {
             found = true;
