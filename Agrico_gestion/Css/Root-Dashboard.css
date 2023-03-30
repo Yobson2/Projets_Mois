@@ -25,6 +25,7 @@ body{
     font-size: 1rem;
     color: #A4A6B3;
     height: 80px;
+    font-family:'Lobster', cursive;
 }
 .title>img{
     width: 30px;
@@ -100,7 +101,8 @@ body{
 }
 .theme{
     margin-left: 10px;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    font-family: 'Lobster', cursive;;
 }
 .theme-second{
     margin-right: 20px;
@@ -112,6 +114,7 @@ display: flex;
 list-style: none;
 justify-content: space-around;
 padding: 10px;
+font-family: 'Lobster', cursive;
 }
 .theme-second>ul>li{
     width: 800px;
@@ -119,6 +122,7 @@ padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 .theme-second>ul>li>img{
     width: 55px;
@@ -167,6 +171,7 @@ padding: 10px;
     background-color: white;
     text-align: center;
     font-weight: bold;
+   font-family:'Lobster', cursive;
 }
 .card1:hover {
     background-color: #3b82f6;

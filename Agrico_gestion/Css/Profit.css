@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
+*,::before,::after{
+    margin: 0;
+    padding: 0;
+    background-origin: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .profit{
+    width: 100%;
+    position: relative;
+    border: 1px solid black;
+    height: auto;
+    display: none;
+  }
+  .profit>h1 {
+    text-align: center;
+    font-family:'Lobster', cursive;
+  } 
+  #modif-profit {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  .profit-section{
+    margin: 10px 0;
+  }
+  
+ .profit-section>label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+  }
+  
+  .champs{
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+#send-profit{
+    background-color: #4caf50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+#send-profit:hover {
+    background-color: #3e8e41;
+  }
+  

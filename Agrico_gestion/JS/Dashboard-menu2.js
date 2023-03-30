@@ -98,6 +98,46 @@ allCard1[5].addEventListener('click',()=>{
 
 })
 
+///recuperation
+let admisData=[]
+
+function getData() {
+    // console.log(myKey)
+
+    // Récupération de l'id dans l'url
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    console.log(id)
+    
+    // Récupération des données depuis localStorage
+    const key = `A1_${id}`;
+    const data = JSON.parse(localStorage.getItem(key));
+    
+    // Vérification que les données sont définies
+    if (!data) {
+      console.error(`Aucune donnée trouvée pour l'id ${id}`);
+      return;
+    }
+    
+    // Affichage des données en console
+    console.log(data,'my data');
+    setData(data)
+  }
+  
+  // Appel de la fonction getData
+  getData();
+
+function setData(data){
+    let frame=document.querySelectorAll('.theme-second>ul>li')
+    const elComplete=`
+    <span>${data.nom} ${data.prenom}</span>
+    <div class="picture">
+    <img src="../Images/Photos/Photo_admis/${data.fichier.split('\\')[2]}" alt="">
+    </div>                     
+    `
+   frame[1].innerHTML=elComplete
+}
+
 
 
 // creer admis && liste admis
@@ -170,6 +210,7 @@ form3.addEventListener("submit", function(event) {
     alert("Veuillez remplir tous les champs du formulaire");
   }
 });
+
 
 
 //recuperation des donnees A1
@@ -535,7 +576,7 @@ function getElementByName(name) {
     }
   }
   
-  console.log(element);
+  console.log(element.fichier,'test');
   getElementP(element);
 }
 
@@ -543,11 +584,11 @@ function getElementByName(name) {
 function getElementP(t){
     let cards=document.querySelector('.affiche-paysans1')
     let mini="";
-  console.log('data',data)
+  console.log('datankrnjgnjnjnj',data)
         mini = `
         <div class="card">
             <div class="img">
-                <img src="../Images/Photos/Photo_paysans/${t.fichier.split("//")[1]}" alt="">
+                <img src="../Images/Photos/Photo_paysans/${t.fichier.split("//")[2]}" alt="">
             </div>
             <div class="info">
                 <span>${t.nom} ${t.prenom}</span>

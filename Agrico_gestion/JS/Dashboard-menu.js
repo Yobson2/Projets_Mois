@@ -1,16 +1,25 @@
 let allLi=document.querySelectorAll('.navBar-dashboard>ul>li');
 let blocOne=document.querySelector('.bloc-contains')
+let blocTwo=document.querySelector('.profit')
 let blocFour=document.querySelector('.section')
 
 allLi[0].addEventListener('click',()=>{
     blocOne.style.display='block';
     blocFour.style.display='none';
+    blocTwo.style.display='none';
+})
+allLi[1].addEventListener('click',()=>{
+  blocOne.style.display='none';
+  blocFour.style.display='none';
+  blocTwo.style.display='block';
+  
 })
 
-allLi[1].addEventListener('click',()=>{
+allLi[2].addEventListener('click',()=>{
     blocOne.style.display='none';
+    blocTwo.style.display='none';
     blocFour.style.display='block';
-    
+    console.log('bonjour')   
 })
 
 let deco=document.querySelector('.deco')
@@ -87,7 +96,8 @@ function setData(data){
 
 // creer admis && liste admis
 
-const fichier = document.querySelector('input[type="file"]');
+const fichier = document.querySelector('.fichier');
+console.log(fichier)
 let form2 = document.querySelector("#inscription");
 let nom=document.querySelector('#Nom');
 let prenom=document.querySelector('#Prenom');

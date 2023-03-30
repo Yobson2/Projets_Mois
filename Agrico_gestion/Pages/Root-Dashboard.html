@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../Css/Root-Dashboard.css">
-    <link rel="stylesheet" href="../Css/profit.css">
+    <link rel="stylesheet" href="../Css/Profit.css">
     <link rel="stylesheet" href="../Css/parametres-root.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestions-ouvriers</title>
@@ -18,6 +18,7 @@
             </div>
          <ul>
             <li><img src="/Logo/icons8-diagramm-67.png" alt=""> <span>Aperçu</span></li>
+            <li><img src="/Logo/icons8-available-updates-48.png" alt=""> <span>Profit</span></li>
             <li><img src="/Logo/icons8-settings-24.png" alt=""> <span>Parametres</span></li>
          </ul>
          <div class="quit">
@@ -66,6 +67,34 @@
             </div>
             
         </div>
+        <div class="profit">
+            <h1>Profit</h1>
+            <form id="modif-profit">
+              <div class="profit-section">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required  class="champs"/>
+              </div>
+              <div class="profit-section">
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required  class="champs"/>
+              </div>
+              <div class="profit-section">
+                <label for="email">Email :</label>
+                <input type="email" id="email2" name="email" required  class="champs"/>
+              </div>
+              <div class="profit-section">
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password2" name="password" required class="champs"/>
+              </div>
+              <div class="profit-section">
+                <label for="image">Image :</label>
+                <input type="file" id="image" name="image" accept="image/*" required class="champs"/>
+              </div>
+              <div class="profit-section">
+                <input type="submit" value="mettre à jour"  id="send-profit"/>
+              </div>
+            </form>
+        </div>
         <div class="section">
             <div class="body-dash">
                 <div class="bloc-row1">
@@ -82,29 +111,29 @@
                         <div class="photo">
                            <p>Photo</p>
                         </div>
-                        <input type="file" name="image" accept="image/*" class="fichier">
+                        <input type="file" name="image" accept="image/*" class="fichier" required >
                    </div>
                     <div class="row-1">
                         <div class="content-input">
                             
-                            <input type="text" id="Nom" placeholder="Nom">
+                            <input type="text" id="Nom" placeholder="Nom" required >
                         </div>
                         <div class="content-input">
                             
-                            <input type="text" id="Prenom" class="input2" placeholder="Prenom">
+                            <input type="text" id="Prenom" class="input2" placeholder="Prenom" required >
                         </div>
                     </div>
                     <div class="row-2">
                         <div class="content-input" class="input2">
-                            <input type="email" id="email" class="input2" placeholder="email">
+                            <input type="email" id="email" class="input2" placeholder="email" required >
                         </div>
                         <div class="content-input">
                             
-                            <input type="password" id="Password" class="input2" placeholder="Mot de passe">
+                            <input type="password" id="Password" class="input2" placeholder="Mot de passe" required >
                         </div>
                         <div class="content-input">
                             
-                            <input type="text" id="poste" class="input2" placeholder="poste">
+                            <input type="text" id="poste" class="input2" placeholder="poste" required >
                         </div>
                     </div>
                </div>
@@ -123,6 +152,5 @@
     
 
     <script src="../JS/Dashboard-menu.js"></script>
-    <script src="../JS/connexion.js"></script>
 </body>
 </html>

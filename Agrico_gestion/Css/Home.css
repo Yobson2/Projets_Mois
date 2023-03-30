@@ -28,7 +28,7 @@
 
 body{
    background-color: #637fc5;
-    font-family: var(--style2-family);
+   font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
 }
 
@@ -43,7 +43,7 @@ header{
     height: 40px;
     justify-content: space-around;
     align-items: center;
-    font-size: var(--para-sous);
+    font-size: 16px;
     border: none;
     padding: 0.7em 2em;
     font-family: inherit;
