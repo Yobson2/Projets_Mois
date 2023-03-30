@@ -1,4 +1,3 @@
-// let fichier = document.querySelector('input[type="file"]');
 let fichier = document.querySelector('input[type="file"]');
 let form = document.getElementById("inscription");
 let nom=document.querySelector('#Nom');
