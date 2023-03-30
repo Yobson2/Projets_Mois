@@ -12,7 +12,7 @@
     border: 1px solid black;
     display: flex;
     background-color: #DAE0FF;
-    background-image: url("/Images/young-woman-controlling-plantation.jpg");
+    background-image: url("../Images/young-woman-controlling-plantation.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     backface-visibility: initial;
