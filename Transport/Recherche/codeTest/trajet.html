@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trouver un Trajet - Plateforme de Covoiturage</title>
+  <link rel="stylesheet" href="trajet.css"> <!-- Inclure votre fichier CSS pour personnaliser le style -->
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">Plateforme de Covoiturage</a>
+      </div>
+      <ul class="menu">
+        <li><a href="trajets.html">Trouver un Trajet</a></li>
+        <li><a href="profil.html">Mon Profil</a></li>
+        <li><a href="connexion.html">Connexion</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section class="search-section">
+    <h1>Trouver un Trajet</h1>
+    <form>
+      <div class="form-group">
+        <label for="departure">Point de Départ</label>
+        <input type="text" id="departure" name="departure" placeholder="Entrez votre point de départ">
+      </div>
+      <div class="form-group">
+        <label for="destination">Destination</label>
+        <input type="text" id="destination" name="destination" placeholder="Entrez votre destination">
+      </div>
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date">
+      </div>
+      <div class="form-group">
+        <label for="time">Heure</label>
+        <input type="time" id="time" name="time">
+      </div>
+      <div class="form-group">
+        <label for="seats">Nombre de Places</label>
+        <input type="number" id="seats" name="seats" min="1" max="10">
+      </div>
+      <div class="form-group">
+        <label for="preferences">Préférences</label>
+        <select id="preferences" name="preferences">
+          <option value="none">Aucune préférence</option>
+          <option value="smoking">Fumeurs autorisés</option>
+          <option value="pets">Animaux de compagnie autorisés</option>
+        </select>
+      </div>
+      <button type="submit" class="search-button">Rechercher</button>
+    </form>
+  </section>
+  
+  <section class="results-section">
+    <h2>Résultats de la Recherche</h2>
+    <div class="result">
+      <div class="result-info">
+        <h3>Nom du Conducteur</h3>
+        <p>Départ: Ville A</p>
+        <p>Arrivée: Ville B</p>
+        <p>Date: 01/06/2023</p>
+        <p>Heure de Départ: 08:00</p>
+        <p>Places Disponibles: 3</p>
+        <p>Tarif: 20€ par personne</p>
+        <p>Préférences du Conducteur: Animaux de compagnie autorisés</p>
+        <p>Description du Trajet: Lorem ipsum dolor sit amet,
+        </div>
+    </div>
+</body>
+</html>

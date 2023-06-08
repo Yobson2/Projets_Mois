@@ -1,0 +1,45 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+/* Style test :start */
+.board-row{
+  padding: 5px;
+}
+.square{
+  width: 80px;
+  height: 80px;
+  border: 0.4px solid blue;
+  cursor: pointer;
+}
+.square:hover{
+ color: white;
+ background-color: #888;
+}
+
+
+/* End style */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
