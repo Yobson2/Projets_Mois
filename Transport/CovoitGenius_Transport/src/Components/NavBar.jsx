@@ -50,7 +50,7 @@ function Nav() {
             <Link to="/trajet">Contact</Link>
           </li>
           <li className="compte">
-            <Link to="/registre">Mon profit</Link>
+            <Link to="/login">Mon profit</Link>
           </li>
         </ul>
       </nav>

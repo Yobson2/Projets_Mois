@@ -43,7 +43,7 @@
     letter-spacing: -1px;
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: center; 
     padding-left: 30px;
   }
   
@@ -79,7 +79,10 @@
     text-align: center;
    
   }
-  
+  .signin-error{
+    color: red;
+    text-align: center;
+  }
   .signin #lien-connect {
     color: royalblue;
     text-decoration: none;

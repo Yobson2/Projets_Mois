@@ -22,7 +22,7 @@ const auth = getAuth(app);
 const googleProvider=new GoogleAuthProvider();
 
 //Mes collections
-const userCollection = collection(db, "users");
+const userCollection = collection(db, "clients");
 
 
 
