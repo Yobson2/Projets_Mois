@@ -1,0 +1,207 @@
+.contenaire-registre{
+    position: relative;
+    background-color:#e3f9d9;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+}
+.registre-image{
+    position: relative;
+    width: 635.30px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.registre-image>img{
+    border: 0;
+    vertical-align: middle;
+    max-width: 100%;
+    height:100%;
+}
+
+
+#form-registre {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  #title {
+    font-size: 28px;
+    color: royalblue;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }
+  
+  #title::before,#title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: royalblue;
+  }
+  
+  #title::before {
+    width: 18px;
+    height: 18px;
+    background-color: royalblue;
+  }
+  
+  #title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+  
+  .message, .signin {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+    
+  }
+  
+  .signin {
+    text-align: center;
+   
+  }
+  
+  .signin #lien-connect {
+    color: royalblue;
+    text-decoration: none;
+  }
+  
+  .signin #lien-connect:hover {
+    text-decoration: underline royalblue;
+  }
+  
+  .flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+
+  }
+  
+  #form-registre label {
+    position: relative;
+    /* margin: 0px auto; */
+  }
+  
+  #form-registre .input {
+    width: 95%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+    height: auto;
+    margin: 0px auto;
+  }
+  
+  #form-registre label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+    
+  }
+  
+  #form-registre label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  #form-registre label .input:focus + span,.form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  #form-registre label .input:valid + span {
+    color: green;
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+  }
+  
+  .submit:hover {
+    background-color: rgb(56, 90, 194);
+  }
+  
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contenaire-registre {
+      flex-direction: column;
+      overflow-y: scroll;
+    }
+  
+    .registre-image {
+      width: 100%;
+    }
+  
+    #form-registre {
+      width: 100%;
+      max-width: 350px;
+      margin: 5px auto;
+    }
+  }
+
+ 
+
+  @media (max-width:  433px) {
+    .contenaire-registre {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        justify-content: center;
+        align-items: center;
+      }
+    .registre-image {
+      width: 100%;
+    }
+  
+    #form-registre {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      margin: 5px auto;
+    }
+  }
+  
+  
+      

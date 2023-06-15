@@ -1,108 +1,259 @@
-/* html document reference */
-html, body{ margin: 0;  padding: 0; }
+/* The Header Media Queries - Tweak as per your needs */
 
-/*header reference  */
-header{ width: 100%;  height: 60px; background-color: black;  color: white; }
-
-/*reference of logo in header */
-.testLogo{ float: left; width: calc((100%)/6); text-align: center; }
-
-/*search button reference in header */
-#care{ width: calc((100%)/6); text-align: center; float: right; line-height: 60px; }
-
-/*header content reference */
-.navbar{ display: block; width: calc((100%)/1.5); float: left; }
-
-/*followig are the header list content reference */
-ul#navbar{ margin: 0; padding: 0; list-style: none; height: 100%; }
-
-ul#navbar li{ float: left; width: calc((100%-20px)/4); height: 100%; background-color: black;
-  line-height: 60px; text-align: center; transition: background-color 1s; }
-
-ul#navbar li a{  text-decoration: none;  cursor: pointer;  }
-
-ul#navbar li:hover{  background-color: #00CED1;  }
-
-/*about-us on hover content in header*/
-ul#navbar li ul{ margin: 0; padding: 0; }
-
-ul#navbar li ul li{  width: 100%;  display: none; z-index: inherit; position: relative;}
-
-ul#navbar li:hover ul li{  display: block; }
-
-/* header list and search icon reference*/
-ul#navbar li .search-icon{  font-size: 20px; line-height: 40px;  }
-
-/*reference of hamburger in the header*/
-.container{ display: none; }
-
-/*search-field reference in header*/
-#searchabaleWidget{ width: 80%; }
-
-/*reference of search icon and search feild in the header*/
-#care button{ display: none; }
-
-/*Header Styles for display size < 800px width */
-@media (max-width: 800px){
-
-	/*logo reference in header */
-  .testLogo{ position: absolute; left: 32%; }
-
-    /*reference of hamburger menu in header*/
-  .container {  display: inline-block; cursor: pointer; margin: 10px; position: absolute; }
-
-    /*reference of hamburger,search-button,search-field,search-icon and logo in the header*/
-  .container, #care, .testLogo{ width: calc((100%-30px)/3); }
-
-   /*following are the references of search-button,search-icon and search-feild in the header */
-  #care{ text-align: -webkit-right; }
-
-  #care button{ margin-right: 10px; margin-top: 10px; display: block; background-color: black; color: white; font-size: 1.7em; }
-
-   /*following are the dropdown properties of search-field and search-icon in header*/
-  .dropdown{ display: none; background: black; top: 60px; width: 100%; border-top: 2px solid grey; position: absolute; left: 0; text-align: center; }
-
-  /*when dropdown class and sys class met ;this property will work*/
-  .dropdown.sys{ display: block; }
-
-   /*following are the hamburger bars properties  */
-  .bar1, .bar2, .bar3 { width: 35px; height: 5px; background-color: #fff; margin: 6px 0; transition: 0.4s; }
-
-  /*first bar property of hamburger*/
-  .change .bar1 { -webkit-transform: rotate(-45deg) translate(-9px, 6px); transform: rotate(-45deg) translate(-9px, 6px); }
-
-   /*second bar property of hamburger*/
-  .change .bar2 { opacity: 0;}
-
-   /*third bar property of hamburger*/
-  .change .bar3 { -webkit-transform: rotate(45deg) translate(-8px, -8px); transform: rotate(45deg) translate(-8px, -8px); }
-
-  /*header menu lists references*/
-  ul.navbar{ display: none; width: 100%; top: 60px; position: absolute; border-top: 2px solid grey;}
-
-  .navbar.responsive{ display: block; }
-
-  ul#navbar li{ width: 100%; height: auto; display: block; }
-
-/*about-us on hover content in header*/
-  ul#navbar li ul li{ background-color: white; color: black; position: relative; }
+.brand {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .site-header {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+  .site-header > img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+  }
+  
+  .nav__wrapper {
+    list-style: none;
+    font-size: 18px;
+  }
+  
+  .site-header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 80%;
+    margin: 0px auto;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .logo-texte {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    padding: auto;
+    flex-direction: row;
+    z-index: 2;
+  }
+  
+  .logo-texte > h3 {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: monospace;
+    font-size: 2rem;
+    line-height: 1.4;
+    color: blue;
+  }
+  
+  .site-header__start {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+  }
+  
+  .site-header__start > img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    border-radius: 50px;
+  }
+  
+  .nav__item > a {
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .compte > a {
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .nav__item > a:hover,
+  .compte:hover {
+    color: #c9c9c9;
+    transition: all 0.3s;
+    border-bottom: 1px solid #c9c9c9;
+  }
+  
+  .compte {
+    width: 100px;
+    border-radius: 40px;
+    height: 50px;
+    padding: 0 30px;
+    background: #e8e8e8;
+    user-select: none;
+    white-space: nowrap;
+    transition: all .05s linear;
+    font-family: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .compte:hover {
+    background-color: #d9f9e3;
+    color: #c9c9c9;
+  }
+  
+  .pub-header {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+    z-index: 2;
+  }
+  
+  .pub-header > h1 {
+    font-size: 3em;
+    color: black;
+    font-weight: bold;
+    height: auto;
+    width: 80%;
+  }
+  
+  .pub-header > p {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    height: auto;
+    width: 80%;
+  }
+  
+  @media (min-width: 630px) {
+    .site-header__wrapper {
+      justify-content: initial;
+    }
+  
+    .site-header__middle {
+      margin-left: auto;
+    }
+  
+    .nav__wrapper {
+      display: flex;
+    }
+  }
+  
+  @media (max-width: 677px) {
+    .site-header__end {
+      padding-right: 4rem;
+    }
+  
+    .nav__wrapper {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      left: 0;
+      height: auto;
+      z-index: 10;
+      background-color: #d9f0f7;
+      visibility: hidden;
+      opacity: 0;
+      width: 100%;
+      /* transform: translateY(-100%); */
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    }
+  
+    .nav__wrapper.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .nav__item a {
+    display: block;
+    padding: 1rem;
+  }
+  
+  .nav__toggle {
+    padding: 0.25rem  0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    width: 50px;
+    height: auto;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    /* padding: 5px; */
+    display: none;
+    position: absolute;
+    top: 8%;
+    transform: translateX(-50%);
+  }
+  
+  @media (max-width: 677px) {
+    .nav__toggle {
+      display: block;
+      position: absolute;
+      right: 1rem;
+      top: 40%;
+      left: 95%;
+    }
+  }
+  
+  @media (max-width: 913px) {
+     .nav__item > a{
+      font-size: 18px;
+     }
+     .compte > a{
+        font-size: 18px;
+       }
 }
 
-/*Header Styles for display size between 601px to 800px width */
-@media (min-width:601px) and (max-width:800px){
-
-	/*logo reference in header*/
-  .testLogo{ left: 20%; }
-
-  /*search button,search-field,search-icon references*/
-  #care button{ display: none; }
-
-  /*properties of search-icon and search icon in the header*/
-  .dropdown{ display: block; background: black; top: 0; border-top: none; position: relative; text-align: center; }
-
-  /*home,about-us,portfolio and contact content in header */
-  ul#navbar li{ float: left; width: calc((100%-20px)/4); }
-
-  /* about-us on hover content in header*/
-  ul#navbar li ul li{ background-color: black; color: white; position: relative; }
+  @media (max-width: 883px) {
+      .pub-header{
+       width: 60%;
+      }
+       .pub-header h1{
+        font-size: 26px;
+       }
+       .pub-header p{
+        font-size: 16px;
+       }
+       .nav__item > a{
+        font-size: 15px;
+       }
+       .compte > a{
+        font-size: 15px;
+       }
+       .logo-texte > h3{
+        font-size: 20px;
+       }
   }
+
+  
+  @media (max-width: 521px) {
+    
+    .logo-texte > h3{
+     font-size: 23px;
+    }
+}
+@media (max-width: 477px) {
+    
+    .logo-texte > h3{
+     font-size: 16px;
+    }
+}
+
+  
