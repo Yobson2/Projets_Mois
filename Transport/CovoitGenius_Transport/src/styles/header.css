@@ -159,7 +159,7 @@
   
     .nav__wrapper {
       position: absolute;
-      top: 50%;
+      top: 73%;
       right: 0;
       left: 0;
       height: auto;
@@ -176,6 +176,10 @@
       visibility: visible;
       opacity: 1;
       transform: translateY(0);
+    }
+    .site-header__wrapper {
+      justify-content: initial;
+      width: 95%;
     }
   }
   

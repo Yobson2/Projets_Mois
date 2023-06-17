@@ -1,19 +1,11 @@
 import React, { useState } from 'react';
-import { Link, Routes, Route } from 'react-router-dom';
+
 import '../styles/header.css';
-import Trajet from '../pages/Trajet';
-import Home from '../pages/Home';
-import Dashboard from '../pages/userPages/UserSection';
-import Registre from '../pages/Registre';
 import NavSection from './NavBar'
-import Login from '../pages/Login';
 
 function Header() {
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
+    
           <header className="site-header">
             {/* <img src="../../../public/Images/7572771.jpg" alt="" /> */}
             <NavSection />
@@ -24,16 +16,7 @@ function Header() {
                 besoins
               </p>
             </div>
-          </header>
-        }
-      />
-
-      <Route path="/" element={<Home />} />
-      <Route path="/trajet" element={<Trajet />} />
-      <Route path="/registre" element={<Registre />} />
-      <Route path="/DashboardUser" element={<Dashboard />} />
-      <Route path="/login" element={<Login />} />
-    </Routes>
+          </header>  
   );
 }
 

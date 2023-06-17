@@ -128,16 +128,23 @@
   #form-registre label .input:placeholder-shown + span {
     top: 15px;
     font-size: 0.9em;
+    
   }
   
-  #form-registre label .input:focus + span,.form label .input:valid + span {
+  #form-registre label .input:focus + span {
+    top: 5px;
+    font-size: 0.7em;
+    font-weight: 600;
+    
+  }
+  #form-registre label .input:valid + span{
     top: 30px;
     font-size: 0.7em;
     font-weight: 600;
   }
   
   #form-registre label .input:valid + span {
-    color: green;
+    color: royalblue;
   }
   
   .submit {
@@ -150,6 +157,51 @@
     font-size: 16px;
     transform: .3s ease;
   }
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    
+  }
+  .flex-row .button {
+    max-width: 320px;
+    display: flex;
+    padding: 0.5rem 1.4rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    gap: 0.75rem;
+    color: rgb(65, 63, 63);
+    background-color: #fff;
+    cursor: pointer;
+    transition: all .6s ease;
+  }
+  
+  .flex-row .button svg {
+    height: 24px;
+  }
+  
+  .flex-row button:hover {
+    transform: scale(1.02);
+  }
+  
+  .span {
+    font-size: 14px;
+    margin-left: 5px;
+    color: #2d79f3;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
   
   .submit:hover {
     background-color: rgb(56, 90, 194);

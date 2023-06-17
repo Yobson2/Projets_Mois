@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {getFirestore,collection,addDoc,getDocs,updateDoc,doc,getDoc} from "firebase/firestore";
-import {  getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword, GoogleAuthProvider} from "firebase/auth";
+import {  getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword, GoogleAuthProvider,signInWithPopup,signOut} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDNVzEU8vUbq7tKzWo3wVoSGAus5I4koCE",
@@ -26,4 +26,4 @@ const userCollection = collection(db, "clients");
 
 
 
-export {db, auth, userCollection,createUserWithEmailAndPassword,addDoc,signInWithEmailAndPassword,getDocs,updateDoc, doc,getDoc,googleProvider}
+export {db, auth, userCollection,createUserWithEmailAndPassword,addDoc,signInWithEmailAndPassword,getDocs,updateDoc, doc,getDoc,googleProvider,signInWithPopup,signOut}
