@@ -8,6 +8,7 @@ import {auth,createUserWithEmailAndPassword,addDoc,userCollection,googleProvider
     const [error, setError]=useState(false)
     const [er, setErrorChamps]=useState(false)
     const [formData, setFormData] = useState({
+        id_user:generateRandomWord(5),
         nom: "",
         prenom: "",
         email: "",
@@ -54,8 +55,10 @@ import {auth,createUserWithEmailAndPassword,addDoc,userCollection,googleProvider
       const signWithGoogle= async ()=>{
         try {
              await signInWithPopup(auth, googleProvider);  
-          } catch (err) {
-            console.error(err);
+             const { configPassword, ...userData } = formData; 
+             const data = await addDoc(userCollection, userData);
+          } catch (errs) {
+            console.error(errs);
           }
       }
 
@@ -116,6 +119,16 @@ import {auth,createUserWithEmailAndPassword,addDoc,userCollection,googleProvider
       </div>
     );
 }
+
+function generateRandomWord(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let randomWord = '';
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      randomWord += characters.charAt(randomIndex);
+    }
+    return randomWord;
+  }
 
 
 

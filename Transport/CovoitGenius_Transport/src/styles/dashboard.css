@@ -1,0 +1,88 @@
+/* Réinitialisation des styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Styles du tableau de bord */
+  .banner {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .navigation {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 20px;
+  }
+  
+  .menu-item {
+    margin-right: 10px;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+  }
+  
+  .card .navigation2 {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 20px;
+  }
+  
+  .menu-item2 {
+    margin-right: 10px;
+  }
+  
+  .section-title {
+    margin-bottom: 10px;
+  }
+  
+  .card1 {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  /* .section1-moove {
+    display: none;
+  } */
+  
+  /* Responsivité */
+  @media (max-width: 768px) {
+    .navigation {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .navigation .menu-item {
+      margin-bottom: 10px;
+    }
+    
+    .card {
+      padding: 15px;
+    }
+    
+    .card .navigation2 {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .card .navigation2 .menu-item2 {
+      margin-bottom: 10px;
+    }
+  }
+  

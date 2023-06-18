@@ -12,7 +12,7 @@ const Login=()=>{
   const [email, setEmail]=useState("")
   const [password, setPassword]=useState("")
   const navigate=useNavigate()
-     
+   let redireWithId="";
     const handleLogin=(e)=>{
           e.preventDefault();
           let res = {
@@ -23,7 +23,9 @@ const Login=()=>{
           .then((userCredential) => {
             res.user = userCredential.user;
             console.log(res.user)
-            navigate('/DashboardUser')
+            navigate(`/DashboardUser/${res.user.uid}`)
+            redireWithId=res.user.uid
+            console.log( redireWithId,'test')
         })
         .catch((e) => {
           res.error = e.code;
@@ -34,7 +36,7 @@ const Login=()=>{
       const loginGoogle= async ()=>{
         try {
              await signOut(auth,googleProvider); 
-             navigate('/DashboardUser') 
+             navigate(`/DashboardUser/${redireWithId}`) 
           } catch (er) {
             console.error(er);
           }
