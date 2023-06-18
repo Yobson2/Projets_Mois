@@ -1,0 +1,20 @@
+/* .search-section{
+    border: 1px solid blue;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
+.search-section h1{
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+#form44{
+    width: 70%;
+    height: auto;
+    margin: 5px auto;
+}
+
+@media (max-width:637px){
+    #form44{
+        width: 100%;
+    }  
+}

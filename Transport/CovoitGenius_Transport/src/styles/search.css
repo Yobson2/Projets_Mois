@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
+
+/* Réinitialisation des styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles globaux */
+/* body {
+  background-color: #f2f2f2;
+  font-family: 'Roboto', sans-serif;
+} */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Styles de la section de recherche */
+
+.form2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: #555;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-form h3 {
+  font-family: 'Lobster', cursive;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.form-sous {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cont-input {
+  margin: 10px;
+}
+
+.cont-input label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.cont-input .search_input {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+.bottom-element {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-element p {
+  font-size: 14px;
+}
+
+.bottom-element span {
+  font-weight: bold;
+}
+
+.bottom-element input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.liste-el-recherche {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.liste-el-recherche h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.liste-el-recherche p{
+  text-align: center;
+}
+
+.structures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.blocs-listes {
+  /* background-color: #fff; */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  width: 300px;
+  color: black;
+}
+
+.cards-listes {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.picture {
+  display: flex;
+  align-items: center;
+}
+
+.picture img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.picture h4 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.infos {
+  padding: 10px;
+}
+
+.infos-row1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.infos-row1 h4 {
+  font-size: 14px;
+  margin-right: 10px;
+}
+.icon-cars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+
+.icon-cars i {
+  color: #fff;
+  font-size: 18px;
+}
+
+.infos-row2 {
+  display: flex;
+  align-items: center;
+}
+
+.fleche-moove {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.fleche-direction {
+  flex-grow: 1;
+}
+
+.fleche-direction p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.fleche-direction span {
+  font-weight: bold;
+}
+
+.infos-places {
+  display: flex;
+  align-items: center;
+}
+
+.infos-places p {
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.btn-infos {
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+@media (max-width: 365px) {
+  .cont-input label{
+    display: block;
+  }
+}

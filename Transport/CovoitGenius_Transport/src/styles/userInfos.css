@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
+
+#titre{
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
+}
+.form_mise{
+    width: 80%;
+    height: auto;
+}
+
+@media (max-width:921px) {
+    .form_mise{
+        display: flex;
+        flex-direction: column;
+    }
+    .inputs{
+        width: 100%;
+        margin: 0px auto;
+    }
+    .send-btn{
+        margin-top: 20px;
+    }
+}
+
+@media (max-width:691px) {
+    .form_mise{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    .inputs{
+        width: 100%;
+        margin: 0px auto;
+    }
+}
+
+
+@media (max-width:519px) {
+    .form_mise{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin: 0px 0px 0px 0px;
+    }
+}
