@@ -1,53 +1,96 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import   "../styles/login.css"
-import { auth,signInWithEmailAndPassword,signOut,googleProvider} from '../db/firebase';
+import "../styles/login.css";
+import { auth, signInWithEmailAndPassword, signOut, googleProvider, getDocs, userCollection } from '../db/firebase';
 
+const Login = () => {
+  const [error, setError] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [redirectWithId, setRedirectWithId] = useState("");
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    const getAllUsers = async () => {
+      const userId = await getId(userCollection);
+      console.log("User ID:", userId);
+      setRedirectWithId(userId);
+    };
 
-      
-const Login=()=>{
-     
-  const [error, setError]=useState(false)
-  const [email, setEmail]=useState("")
-  const [password, setPassword]=useState("")
-  const navigate=useNavigate()
-   let redireWithId="";
-    const handleLogin=(e)=>{
-          e.preventDefault();
-          let res = {
-            user: null,
-            error: null
-        };
-        signInWithEmailAndPassword (auth, email, password)
-          .then((userCredential) => {
-            res.user = userCredential.user;
-            console.log(res.user)
-            navigate(`/DashboardUser/${res.user.uid}`)
-            redireWithId=res.user.uid
-            console.log( redireWithId,'test')
-        })
-        .catch((e) => {
-          res.error = e.code;
-          setError(true)
-        });
+    getAllUsers();
+  }, []);
 
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const userId = redirectWithId;
+        console.log("Logged in User ID:", userId);
+        navigate(`/DashboardUser/${userId}`);
+        swal("Félicitation !", "Votre connexion a été éffectuer avec succes !", "success")
+      })
+      .catch((e) => {
+        setError(true);
+      });
+  };
+
+  const loginGoogle = async () => {
+    try {
+      await signOut(auth, googleProvider);
+      const userId = redirectWithId;
+      console.log("Logged in User ID:", userId);
+      swal("Félicitation !", "Votre connexion a été éffectuer avec succes !", "success")
+      navigate(`/DashboardUser/${userId}`);
+    } catch (er) {
+      console.error(er);
+    }
+  };
+
+  async function getId(userCollection) {
+    try {
+      const snapshot = await getDocs(userCollection);
+      for (const doc of snapshot.docs) {
+        const docData = doc.data();
+        const userId = await recupereDocumentId(userCollection, docData.nom, docData.email, docData.prenom);
+        if (userId) {
+          return userId;
+        }
       }
-      const loginGoogle= async ()=>{
-        try {
-             await signOut(auth,googleProvider); 
-             navigate(`/DashboardUser/${redireWithId}`) 
-          } catch (er) {
-            console.error(er);
-          }
+      console.log("Aucun document trouvé avec le nom et l'email spécifiés.");
+      return null;
+    } catch (error) {
+      console.error("Une erreur s'est produite lors de la récupération des documents :", error);
+      return null;
+    }
+  }
+
+  async function recupereDocumentId(userCollection, nom, email, prenom) {
+    try {
+      const querySnapshot = await getDocs(userCollection);
+      for (const doc of querySnapshot.docs) {
+        const documentData = doc.data();
+        const documentId = doc.id;
+
+        if (documentData.nom === nom && documentData.prenom === prenom && documentData.email === email) {
+          console.log(documentId, 'only id');
+          return documentId;
+        }
       }
+      console.log("Aucun document trouvé avec le nom et l'email spécifiés.");
+      return null;
+    } catch (error) {
+      console.error("Une erreur s'est produite lors de la récupération des documents :", error);
+      return null;
+    }
+  }
 
       
     return (
 
       <div className="contenaire-login">
       <div className="login-image">
-           {/* <img src="../../public/Images/7572771.jpg" alt="" /> */}
+           <img src="../../public/Images/login-page-img.png" alt="" />
       </div>
       <form className="form" onSubmit={handleLogin}>
           <div className="entete-login">
@@ -97,6 +140,8 @@ const Login=()=>{
       
     );
 }
+ 
+
 
 
 

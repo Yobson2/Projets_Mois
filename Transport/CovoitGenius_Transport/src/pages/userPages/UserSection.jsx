@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {  useParams } from 'react-router-dom';
 import "../../styles/Dashboard.css";
 import NavSection from '../../Components/NavBar';
 import Chat from '../../Components/Trajets/Chat';
@@ -17,6 +18,7 @@ import Historiques2 from '../../Components/MesReservations/Historiques';
 export default function Dashboard() {
   const [currentSection, setCurrentSection] = useState(1);
   const [currentSubSection, setCurrentSubSection] = useState(5);
+  let { id } = useParams();
 
   const changeContent = (section) => {
     setCurrentSection(section);
@@ -29,7 +31,7 @@ export default function Dashboard() {
   
   return (
     <div className='User-section'>
-     
+      
       {/* <NavSection /> */}
       <h3>Dashboard user</h3>
       <div className="banner">

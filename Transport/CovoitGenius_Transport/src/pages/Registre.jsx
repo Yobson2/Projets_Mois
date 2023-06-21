@@ -46,27 +46,40 @@ import {auth,createUserWithEmailAndPassword,addDoc,userCollection,googleProvider
            // Ignorer configPassword lors de l'ajout des données
           const { configPassword, ...userData } = formData; 
           const data = await addDoc(userCollection, userData);
+          swal("Félicitation !", "Votre inscription a été éffectuer avec succes !", "success")
           resetForm();
           console.log(userData, 'my Sign');
         } catch (e) {
           setErrorChamps(true);
         }
       };
-      const signWithGoogle= async ()=>{
+      
+      const signWithGoogle = async () => {
         try {
-             await signInWithPopup(auth, googleProvider);  
-             const { configPassword, ...userData } = formData; 
-             const data = await addDoc(userCollection, userData);
-          } catch (errs) {
-            console.error(errs);
-          }
-      }
+          const result = await signInWithPopup(auth, googleProvider);
+          const { user } = result;
+          
+          const userData = {
+            nom: dernierMot(user.displayName),
+            prenom: motsSaufUn(user.displayName),
+            email: user.email,
+            photo:user.photoURL
+          };
+           
+          console.log( user.photoURL,"my add google")
+          const data = await addDoc(userCollection, userData);
+          swal("Félicitation !", "Votre inscription a été éffectuer avec succes !", "success")
+        } catch (errs) {
+          console.error(errs);
+        }
+      };
+      
 
 
     return (
         <div className="contenaire-registre" >
-            <div className="registre-image">
-                {/* <img src="../../public/Images/7572771.jpg" alt="" /> */}
+            <div className="registre-image" id='registre-image'>
+                <img src="../../public/Images/register-page-img.png" alt="" />
             </div>
             <form className="form-registre" id='form-registre' onSubmit={handleSign}>
                 <p className="title" id='title'>Enregistrer</p>
@@ -129,6 +142,24 @@ function generateRandomWord(length) {
     }
     return randomWord;
   }
+
+  function dernierMot(chaine) {
+    let mots = chaine.split(" ");
+    let dernierMot = mots[mots.length - 1];
+    
+    return dernierMot;
+  }
+  function motsSaufUn(chaine) {
+    let mots = chaine.split(" ");
+    let dernierMot = mots[mots.length - 1];
+  
+    // Filtre les mots pour exclure le mot spécifié
+    let motsSaufExclu = mots.filter(mot => mot !== dernierMot);
+  
+    return motsSaufExclu.join(" ");
+  }
+  
+
 
 
 
