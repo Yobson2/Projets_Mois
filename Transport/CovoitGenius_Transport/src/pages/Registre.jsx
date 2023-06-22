@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import {auth,createUserWithEmailAndPassword,addDoc,userCollection,googleProvider,signInWithPopup} from '../db/firebase';
 
  function Registre(){
-    const [error, setError]=useState(false)
     const [er, setErrorChamps]=useState(false)
     const [formData, setFormData] = useState({
         id_user:generateRandomWord(5),

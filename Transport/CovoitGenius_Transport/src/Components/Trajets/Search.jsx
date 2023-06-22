@@ -1,27 +1,99 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "../../styles/search.css";
-
+import { annonceCollection, userCollection, getDocs } from '../../db/firebase';
 
 function Search() {
+  const [er, setErrorChamps] = useState(true);
+  const [idElement, setIdElement] = useState([]);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+
+  const [formSearch, setFormSearch] = useState({
+    depart: "",
+    destination: "",
+    date: "",
+  });
+  const { depart, destination, date } = formSearch;
+
+  const handleChange = (e) => {
+    setFormSearch({
+      ...formSearch,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const resetForm = () => {
+    setFormSearch({
+      depart: "",
+      destination: "",
+      date: "",
+    });
+  };
+
+  console.log('formData 2', formSearch);
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    console.log('formData soumis  11', formSearch);
+    setIsFormSubmitted(true);
+    await GetInfosUser();
+    // resetForm()
+  };
+
+  async function GetInfosUser() {
+    try {
+      const annonceQuerySnapshot = await getDocs(annonceCollection);
+      const userData = annonceQuerySnapshot.docs.map((doc) => doc.data());
+
+      console.log('formData ---GetInfosUser-----', formSearch.depart);
+      //  && userData.includes(formSearch.date)
+
+      //  console.log(userData,'++++++')
+      const filteredData = userData.filter(
+        (data) =>
+          data.Point_de_Départ === formSearch.depart &&
+          data.Destination === formSearch.destination &&
+          data.Date === formSearch.date
+      );
+
+      console.log(filteredData, '++++++');
+
+      setIdElement(filteredData);
+
+      console.log("Opération terminée");
+    } catch (error) {
+      console.error(
+        "Une erreur s'est produite lors de la récupération des documents :",
+        error
+      );
+    }
+  }
+
+  useEffect(() => {
+    GetInfosUser();
+  }, []);
+
+
+
   return (
-    <div classNameName="content-seach">
-    <div className="card-form">
+    <div className="content-search">
+     
+     <div className="card-form">
      <h3>Votre Recherche</h3>
-       <form action="#" className="form2" >
+       <form action="#" className="form2" onSubmit={handleSearch}  >
              <div className="form-sous">
                      <div className="cont-input">
                          <label for="depart">Départ *</label>
-                         <input type="text" id="depart" name="depart" required  className='search_input'/>
+                         <input type="text" id="depart" name="depart" required  className='search_input' onChange={handleChange}/>
                      </div>
                      <div className="cont-input"> 
 
                          <label for="destination">Destination *</label>
-                         <input type="text" id="destination" name="destination" required  className='search_input'/>
+                         <input type="text" id="destination" name="destination" required  className='search_input' onChange={handleChange}/>
                      </div>
                      <div className="cont-input"> 
                          
                          <label for="date">Date *</label>
-                         <input type="date" id="date" name="date" required className='search_input'/>
+                         <input type="date" id="date" name="date" required="" className='search_input' onChange={handleChange}/>
                      </div>
                  
              </div>
@@ -31,46 +103,49 @@ function Search() {
         </div>
        </form>
        <div className="liste-el-recherche">
-         <p><span>10 </span>Trajets trouvés</p>
-         {/* <h2>Listes des trajets disponibles</h2> */}
+         <p><span> {idElement.length} </span>Trajets trouvés</p>
          <div className="structures">
-             
-         <div className="blocs-listes">
-             <div className="cards-listes">
-                <div className="picture"><img src="Images/7572771.jpg" alt="" /><h4>Thomas</h4></div>
-             </div>
-             <div className="infos">
-               <div className="infos-row1">
-                  <h4><span>8h 00</span> |   <span>Jeu 08 Mars 2002</span></h4>
-                  <div className="icon-cars">
-                     <i className="fa-thin fa-down-to-line"></i>
+         { isFormSubmitted && ( 
+          // Condition pour afficher les informations après la soumission du formulaire
+        idElement.map((infos, index) => (
+          <div className="blocs-listes" key={index}>
+                  <div className="cards-listes">
+                    <div className="picture"><img src="Images/7572771.jpg" alt="" /><h4></h4></div>
                   </div>
-               </div>
-               <div className="infos-row2">
-                  <div className="fleche-moove">
-                        |  
+                  <div className="infos">
+                    <div className="infos-row1">
+                      <h4><span>{infos.Heure}</span> |   <span>{infos.Date}</span></h4>
+                      <div className="icon-cars">
+                          <i className="fa-thin fa-down-to-line"></i>
+                      </div>
+                    </div>
+                    <div className="infos-row2">
+                      <div className="fleche-moove">
+                            |  
+                      </div>
+                      <div className="fleche-direction">
+                          <p>Abidjan, <span>{infos.Point_de_Départ}</span></p>
+                          <p>Abidjan, <span>{infos.Destination}</span></p>
+                      </div>
+                      <div className="infos-places">
+                          <p><span>{infos.Nombre_de_Places} </span> places</p>
+                            <button className="btn-infos"><span>12</span>Fcfa</button>
+                          </div>
+                    </div>
                   </div>
-                  <div className="fleche-direction">
-                      <p>Abidjan, <span>Yopougon</span></p>
-                      <p>Abidjan, <span>Yopougon</span></p>
-                  </div>
-                  <div className="infos-places">
-                      <p><span>5</span>places</p>
-                       <button className="btn-infos"><span>12</span>Fcfa</button>
-                     </div>
-               </div>
-             </div>
-             
-            
-          </div>
-          
-         
-          
-            
-          
-          
-          
-         </div>
+                 </div>
+        ))
+      )}
+                
+                  
+                  
+                
+                  
+                  
+                
+                
+                
+              </div>
          
        </div>
      </div>

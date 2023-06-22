@@ -23,7 +23,9 @@ const googleProvider=new GoogleAuthProvider();
 
 //Mes collections
 const userCollection = collection(db, "clients");
+const annonceCollection = collection(db, "annonces");
+const reservationCollection = collection(db, "reservationss");
 
 
 
-export {db, auth, userCollection,createUserWithEmailAndPassword,addDoc,signInWithEmailAndPassword,getDocs,updateDoc, doc,getDoc,googleProvider,signInWithPopup,signOut}
+export {db, auth, userCollection,createUserWithEmailAndPassword,addDoc,signInWithEmailAndPassword,getDocs,updateDoc, doc,getDoc,googleProvider,signInWithPopup,signOut,annonceCollection}

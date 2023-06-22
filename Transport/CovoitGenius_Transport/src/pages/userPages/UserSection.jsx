@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {  useParams } from 'react-router-dom';
 import "../../styles/Dashboard.css";
 import NavSection from '../../Components/NavBar';
@@ -15,27 +15,57 @@ import Historiques from '../../Components/MesAnnonces/Historiques';
 import Encours2 from '../../Components/MesReservations/Encours';
 import Historiques2 from '../../Components/MesReservations/Historiques';
 
+import {  getDocs, userCollection } from '../../db/firebase';
+
 export default function Dashboard() {
   const [currentSection, setCurrentSection] = useState(1);
   const [currentSubSection, setCurrentSubSection] = useState(5);
+  const [userInfo, setUserInfo] = useState(null);
   let { id } = useParams();
-
+  console.log('ID:', id);
   const changeContent = (section) => {
     setCurrentSection(section);
   };
 
   const changeTrajet = (subsection) => {
     setCurrentSubSection(subsection + 4);
-    console.log('changeTrajet')
   };
+  async function GetInfosUser(id) {
+    try {
+      const querySnapshot = await getDocs(userCollection);
+      for (const doc of querySnapshot.docs) {
+        const documentData = doc.data();
+        const documentId = doc.id;
+        if (id === documentId) {
+          setUserInfo(documentData);
+        }
+      }
+      console.log("DashBoard");
+    } catch (error) {
+      console.error("Une erreur s'est produite lors de la récupération des documents :", error);
+    }
+  }
+
+  useEffect(() => {
+    GetInfosUser(id);
+  }, [id]);
+
   
   return (
     <div className='User-section'>
       
       {/* <NavSection /> */}
       <h3>Dashboard user</h3>
+      
       <div className="banner">
         <h1>User Dashboard</h1>
+        {userInfo && (
+        <div>
+          <h2>Informations de l'utilisateur</h2>
+          <p>Nom: {userInfo.nom}</p>
+          <p>Email: {userInfo.email}</p>
+        </div>
+      )}
       </div>
       
       <div className="navigation">
@@ -58,12 +88,12 @@ export default function Dashboard() {
           <div className="section1-moove">
             <div className="card1" id="section5" style={{ display: currentSubSection === 5 ? 'block' : 'none' }}>
               {/* <h3 className="section-title">Section 5</h3> */}
-              <Search />
+               <Search   />
             </div>
             
             <div className="card1" id="section6" style={{ display: currentSubSection === 6 ? 'block' : 'none' }}>
               <h3 className="section-title">Section 6</h3>
-              <Proposer />
+              {id && <Proposer userId={id} />}
             </div>
             
             <div className="card1" id="section7" style={{ display: currentSubSection === 7 ? 'block' : 'none' }}>
@@ -79,8 +109,6 @@ export default function Dashboard() {
             <button className="menu-item2" onClick={() => changeTrajet(5)}>Photo</button> 
             <button className="menu-item2" onClick={() => changeTrajet(6)}>Vehicule</button>
           </div>
-          {/* <h3 className="section-title">Section 2</h3>
-          <p>Contenu de la section 2...</p> */}
           <div className="section1-moove">
           <div className="card1" id="section8" style={{ display: currentSubSection === 8 ? 'block' : 'none' }}>
               <h3 className="section-title">Section 8</h3>
@@ -145,3 +173,4 @@ export default function Dashboard() {
    
   );
 }
+
