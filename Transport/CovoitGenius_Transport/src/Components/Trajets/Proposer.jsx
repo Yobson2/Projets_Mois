@@ -6,11 +6,7 @@ import {annonceCollection,addDoc, getDocs,userCollection} from '../../db/firebas
 function Proposer({ userId }) {
   const [er, setErrorChamps]=useState(false)
   const matchingDocs = [];
-
   const [formPropose, setFormPropose] = useState({
-    id_user:userId,
-    nom:"ccoco",
-    photo:"photo",
     Point_de_Départ: "",
     Destination: "",
     Date: "",
@@ -21,14 +17,19 @@ function Proposer({ userId }) {
   });
  
 
-  const { id_user,nom,photo,Point_de_Départ,Destination, Date,Heure,Nombre_de_Places, Taille_des_bagages,Préférences } = formPropose;
+  const { Point_de_Départ,Destination, Date,Heure,Nombre_de_Places, Taille_des_bagages,Préférences } = formPropose;
+  
   const handleChange = (e) => {
       
     setFormPropose({
       ...formPropose,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      id_user: userId,
+      nom:"ccoco",
+      photo:"photo",
     });
   };
+  
   const resetForm = () => {
     setFormPropose({
       Point_de_Départ: "",

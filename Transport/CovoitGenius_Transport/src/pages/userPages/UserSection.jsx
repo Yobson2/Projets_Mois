@@ -159,7 +159,7 @@ export default function Dashboard() {
           <p>Retrouvez ici vos reservations en cours ainsi que celles dans l'historiques</p>
           <div className="card1" id="section13" style={{ display: currentSubSection === 13 ? 'block' : 'none' }}>
               <h3 className="section-title">/En cours</h3>
-              <Encours2 />
+              {id && <Encours2 userId={id} />}
             </div>
             
             <div className="card1" id="section14" style={{ display: currentSubSection === 14 ? 'block' : 'none' }}>
