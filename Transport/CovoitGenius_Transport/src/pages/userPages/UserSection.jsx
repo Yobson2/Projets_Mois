@@ -40,7 +40,7 @@ export default function Dashboard() {
           setUserInfo(documentData);
         }
       }
-      console.log("DashBoard");
+      // console.log("DashBoard");
     } catch (error) {
       console.error("Une erreur s'est produite lors de la récupération des documents :", error);
     }
@@ -138,7 +138,8 @@ export default function Dashboard() {
           <div className="card1" id="section11" style={{ display: currentSubSection === 11 ? 'block' : 'none' }}>
              
               <h3 className="section-title">/En cours</h3>
-              <AnnoncesEncours />
+              
+              {id && <AnnoncesEncours userId={id} />}
             </div>
             
             <div className="card1" id="section12" style={{ display: currentSubSection === 12 ? 'block' : 'none' }}>

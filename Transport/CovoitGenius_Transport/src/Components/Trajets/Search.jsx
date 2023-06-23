@@ -29,11 +29,11 @@ function Search() {
     });
   };
 
-  console.log('formData 2', formSearch);
+  // console.log('formData 2', formSearch);
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    console.log('formData soumis  11', formSearch);
+    // console.log('formData soumis  11', formSearch);
     setIsFormSubmitted(true);
     await GetInfosUser();
     // resetForm()
@@ -44,10 +44,7 @@ function Search() {
       const annonceQuerySnapshot = await getDocs(annonceCollection);
       const userData = annonceQuerySnapshot.docs.map((doc) => doc.data());
 
-      console.log('formData ---GetInfosUser-----', formSearch.depart);
-      //  && userData.includes(formSearch.date)
-
-      //  console.log(userData,'++++++')
+      // console.log('formData ---GetInfosUser-----', formSearch.depart);
       const filteredData = userData.filter(
         (data) =>
           data.Point_de_Départ === formSearch.depart &&
@@ -55,7 +52,7 @@ function Search() {
           data.Date === formSearch.date
       );
 
-      console.log(filteredData, '++++++');
+      // console.log(filteredData, '++++++');
 
       setIdElement(filteredData);
 

@@ -53,7 +53,7 @@ function Proposer({ userId }) {
       swal("Félicitation !", "Votre Annonces a été enregistre avec succes !", "success")
       resetForm();
       setErrorChamps(false);
-      console.log(formPropose,'form')
+      // console.log(formPropose,'form')
     } catch (e) {
       setErrorChamps(true);
     }
@@ -73,8 +73,8 @@ function Proposer({ userId }) {
         }
       }
   
-      console.log('Données correspondantes :', matchingDocs[0].nom,matchingDocs[0].photo);
-      console.log("Super11");
+      // console.log('Données correspondantes :', matchingDocs[0].nom,matchingDocs[0].photo);
+      // console.log("Super11");
     } catch (error) {
       console.error("Une erreur s'est produite lors de la récupération des documents :", error);
     }

@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import {getFirestore,collection,addDoc,getDocs,updateDoc,doc,getDoc} from "firebase/firestore";
+import {getFirestore,collection,addDoc,getDocs,updateDoc,doc,getDoc,deleteDoc} from "firebase/firestore";
 import {  getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword, GoogleAuthProvider,signInWithPopup,signOut} from "firebase/auth";
 
 const firebaseConfig = {
@@ -24,8 +24,8 @@ const googleProvider=new GoogleAuthProvider();
 //Mes collections
 const userCollection = collection(db, "clients");
 const annonceCollection = collection(db, "annonces");
-const reservationCollection = collection(db, "reservationss");
+const reservationCollection = collection(db, "reservations");
+const historiquesAnnonces=collection(db, "historiques_annonces");
 
 
-
-export {db, auth, userCollection,createUserWithEmailAndPassword,addDoc,signInWithEmailAndPassword,getDocs,updateDoc, doc,getDoc,googleProvider,signInWithPopup,signOut,annonceCollection}
+export {db, auth, userCollection,createUserWithEmailAndPassword,addDoc,signInWithEmailAndPassword,getDocs,updateDoc, doc, deleteDoc ,getDoc,googleProvider,signInWithPopup,signOut,annonceCollection,historiquesAnnonces,reservationCollection}
