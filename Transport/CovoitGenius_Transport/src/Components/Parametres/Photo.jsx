@@ -22,7 +22,6 @@ function Photo({ userId }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('this is my image', previewSrc);
     await updateImage(userId); 
   };
 

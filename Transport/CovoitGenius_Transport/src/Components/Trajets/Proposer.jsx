@@ -1,48 +1,47 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../../styles/Proposer.css"
 
-import {annonceCollection,addDoc, getDocs,userCollection} from '../../db/firebase';
+import { annonceCollection, addDoc, getDocs, userCollection } from '../../db/firebase';
 
 function Proposer({ userId }) {
-  const [er, setErrorChamps]=useState(false)
-  const matchingDocs = [];
+  const [er, setErrorChamps] = useState(false);
+  const [matchingDocs, setMatchingDocs] = useState([]);
   const [formPropose, setFormPropose] = useState({
     Point_de_Départ: "",
     Destination: "",
     Date: "",
     Heure: "",
-    Nombre_de_Places:"",
-    Taille_des_bagages:"",
+    Nombre_de_Places: "",
+    Taille_des_bagages: "",
     Préférences: ""
   });
- 
 
-  const { Point_de_Départ,Destination, Date,Heure,Nombre_de_Places, Taille_des_bagages,Préférences } = formPropose;
-  
+
+  const { Point_de_Départ, Destination, Date, Heure, Nombre_de_Places, Taille_des_bagages, Préférences } = formPropose;
+
   const handleChange = (e) => {
-      
     setFormPropose({
       ...formPropose,
       [e.target.name]: e.target.value,
       id_user: userId,
-      nom:"ccoco",
-      photo:"photo",
+      nom: matchingDocs[0]?.nom,
+      photo: matchingDocs[0]?.photo,
     });
   };
-  
+
   const resetForm = () => {
     setFormPropose({
       Point_de_Départ: "",
       Destination: "",
       Date: "",
       Heure: "",
-      Nombre_de_Places:"",
-      Taille_des_bagages:"",
+      Nombre_de_Places: "",
+      Taille_des_bagages: "",
       Préférences: ""
     });
 
   };
-  
+
   const handleSign = async (e) => {
     e.preventDefault();
     if (!Point_de_Départ || !Destination || !Date || !Heure || !Nombre_de_Places || !Taille_des_bagages || !Préférences) {
@@ -50,37 +49,31 @@ function Proposer({ userId }) {
       return;
     }
     try {
-      const data = await addDoc(annonceCollection, formPropose); 
-      swal("Félicitation !", "Votre Annonces a été enregistre avec succes !", "success")
+      const data = await addDoc(annonceCollection, formPropose);
+      swal("Félicitation !", "Votre Annonces a été enregistrée avec succès !", "success");
       resetForm();
       setErrorChamps(false);
-      // console.log(formPropose,'form')
     } catch (e) {
       setErrorChamps(true);
     }
   }
-  async function GetInfosUser(userId) {
-    try {
-      const querySnapshot = await getDocs(userCollection);
-  
-      for (const doc of querySnapshot.docs) {
-        const documentData = doc.data();
-        const documentId = doc.id;
-  
-        if (userId === documentId) {
-          const { nom, photo } = documentData;
-          const matchingData = { nom, photo };
-          matchingDocs.push(matchingData);
-        }
+
+  useEffect(() => {
+    async function GetInfosUser(userId) {
+      try {
+        const querySnapshot = await getDocs(userCollection);
+        const matchingData = querySnapshot.docs
+          .filter(doc => doc.id === userId)
+          .map(doc => ({ nom: doc.data().nom, photo: doc.data().photo }));
+
+        setMatchingDocs(matchingData);
+      } catch (error) {
+        console.error("Une erreur s'est produite lors de la récupération des documents :", error);
       }
-  
-      // console.log('Données correspondantes :', matchingDocs[0].nom,matchingDocs[0].photo);
-      // console.log("Super11");
-    } catch (error) {
-      console.error("Une erreur s'est produite lors de la récupération des documents :", error);
     }
-  }
-  GetInfosUser(userId);
+    GetInfosUser(userId);
+  }, [userId]);
+
  
   return (
     <section className="search-section p-8">

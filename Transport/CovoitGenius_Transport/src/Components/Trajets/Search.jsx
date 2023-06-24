@@ -136,7 +136,7 @@ function Search({userId}) {
         idElement.map((infos, index) => (
           <div className="blocs-listes" key={index}>
                   <div className="cards-listes">
-                    <div className="picture"><img src="Images/7572771.jpg" alt="" /><h4></h4></div>
+                    <div className="picture"><img src={infos.photo} alt="" /><h4>{infos.nom}</h4></div>
                   </div>
                   <div className="infos">
                     <div className="infos-row1">
