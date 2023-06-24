@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import "../../styles/search.css";
-import { annonceCollection, userCollection, getDocs } from '../../db/firebase';
+import { annonceCollection,addDoc, getDocs,reservationCollection } from '../../db/firebase';
 
-function Search() {
+function Search({userId}) {
   const [er, setErrorChamps] = useState(true);
   const [idElement, setIdElement] = useState([]);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [isReserve,setIseReserve]=useState([]);
+  const [hasReservation, setHasReservation] = useState(false);
 
   const [formSearch, setFormSearch] = useState({
     depart: "",
@@ -20,7 +22,7 @@ function Search() {
       [e.target.name]: e.target.value
     });
   };
-
+ 
   const resetForm = () => {
     setFormSearch({
       depart: "",
@@ -52,9 +54,11 @@ function Search() {
           data.Date === formSearch.date
       );
 
-      // console.log(filteredData, '++++++');
+     
 
       setIdElement(filteredData);
+     
+      console.log(filteredData, '++++++');
 
       console.log("Opération terminée");
     } catch (error) {
@@ -70,7 +74,34 @@ function Search() {
     
   }, []);
 
+  // Reservation action
 
+  const doReservation = async (infos) => {
+    try {
+       setIseReserve({
+        
+        id_user_reservation: userId,
+        heure_reservation: getCurrentTime(),
+        date_reservation: getCurrentDate(),
+        ...infos
+      })
+      // console.log('infos',infos);
+      // console.log('isReserve',isReserve);
+      console.log('-est',hasReservation)
+      if (!infos.hasReservation) {
+        // Effectuez la réservation
+        await addDoc(reservationCollection, isReserve);
+        infos.hasReservation = true;
+        console.log('test', infos.hasReservation);
+        swal("Félicitations !", "Votre reservation a été effectuée avec succès !.", "success");
+      } else {
+        // console.log('Désolé, ');
+        swal("Désolé", "vous avez déjà effectué une réservation.", "error")
+      }
+    } catch (errs) {
+      console.error(errs);
+    }
+  };
 
   return (
     <div className="content-search">
@@ -130,7 +161,7 @@ function Search() {
                             <button className="btn-infos"><span>12</span>Fcfa</button>
                           </div>
                     </div>
-                    <button className="btn-infos">Reservez</button>
+                    <button className="btn-infos" onClick={() => doReservation(infos)}>Réservez</button>
                   </div>
                  </div>
         ))
@@ -156,3 +187,27 @@ function Search() {
 }
 
 export default Search;
+
+
+function getCurrentTime() {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+
+  // Formatage des chiffres 
+  const formattedHours = hours.toString().padStart(2, '0');
+  const formattedMinutes = minutes.toString().padStart(2, '0');
+
+  return `${formattedHours}:${formattedMinutes}`;
+}
+function getCurrentDate() {
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+  const day = String(currentDate.getDate()).padStart(2, '0');
+
+  // Format de la date : AAAA-MM-JJ
+  const formattedDate = `${year}-${month}-${day}`;
+
+  return formattedDate;
+}

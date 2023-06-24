@@ -88,7 +88,8 @@ export default function Dashboard() {
           <div className="section1-moove">
             <div className="card1" id="section5" style={{ display: currentSubSection === 5 ? 'block' : 'none' }}>
               {/* <h3 className="section-title">Section 5</h3> */}
-               <Search   />
+
+               {id && <Search userId={id} />}
             </div>
             
             <div className="card1" id="section6" style={{ display: currentSubSection === 6 ? 'block' : 'none' }}>
