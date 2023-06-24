@@ -43,8 +43,8 @@ function Search() {
     try {
       const annonceQuerySnapshot = await getDocs(annonceCollection);
       const userData = annonceQuerySnapshot.docs.map((doc) => doc.data());
-
-      // console.log('formData ---GetInfosUser-----', formSearch.depart);
+      console.log('Search data',userData)
+      
       const filteredData = userData.filter(
         (data) =>
           data.Point_de_Départ === formSearch.depart &&
@@ -67,6 +67,7 @@ function Search() {
 
   useEffect(() => {
     GetInfosUser();
+    
   }, []);
 
 
@@ -129,6 +130,7 @@ function Search() {
                             <button className="btn-infos"><span>12</span>Fcfa</button>
                           </div>
                     </div>
+                    <button className="btn-infos">Reservez</button>
                   </div>
                  </div>
         ))

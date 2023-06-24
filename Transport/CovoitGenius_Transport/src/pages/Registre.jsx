@@ -6,8 +6,8 @@ import {auth,createUserWithEmailAndPassword,addDoc,userCollection,googleProvider
 
  function Registre(){
     const [er, setErrorChamps]=useState(false)
+    const [error, setError]=useState(false)
     const [formData, setFormData] = useState({
-        id_user:generateRandomWord(5),
         nom: "",
         prenom: "",
         email: "",

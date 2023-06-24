@@ -20,6 +20,7 @@ function AnnoncesEncours({ userId }) {
       const userInfos = userDocuments.map(doc => ({
         documentId: doc.id,
         ...doc.data()
+       
       }));
       console.log('userInfos', userInfos);
   
@@ -36,8 +37,12 @@ function AnnoncesEncours({ userId }) {
     try {
       const elementToDelete = userInfo.find(info => info.documentId === documentId);
       // Enregistrer l'élément dans la collection "historiquesAnnonces"
-      if (elementToDelete) {
-         await addDoc(historiquesAnnonces, elementToDelete);
+      const elementFin={
+        ...elementToDelete,
+        Heure_fin:getCurrentTime()
+      }
+      if (elementFin) {
+         await addDoc(historiquesAnnonces, elementFin);
         console.log('Élément archivé avec succès !');
       }
       
@@ -85,3 +90,17 @@ function AnnoncesEncours({ userId }) {
 }
 
 export default AnnoncesEncours;
+
+
+
+function getCurrentTime() {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+
+  // Formatage des chiffres 
+  const formattedHours = hours.toString().padStart(2, '0');
+  const formattedMinutes = minutes.toString().padStart(2, '0');
+
+  return `${formattedHours}:${formattedMinutes}`;
+}

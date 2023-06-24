@@ -1,89 +1,104 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "../styles/login.css";
-import { auth, signInWithEmailAndPassword, signOut, googleProvider, getDocs, userCollection } from '../db/firebase';
+import { auth, signInWithEmailAndPassword, signOut,googleProvider,signInWithPopup, getDocs, userCollection } from '../db/firebase';
 
 const Login = () => {
   const [error, setError] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formLogin, setFormLogin] = useState({
+    email: "",
+    password: ""
+  });
+  const { email, password} = formLogin;
   const [redirectWithId, setRedirectWithId] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const getAllUsers = async () => {
-      const userId = await getId(userCollection);
-      console.log("User ID:", userId);
-      setRedirectWithId(userId);
-    };
 
-    getAllUsers();
-  }, []);
-
-  const handleLogin = (e) => {
+  const handleChange = (e) => {
+    setFormLogin({
+      ...formLogin,
+      [e.target.name]: e.target.value
+    });
+  };
+  const handleLogin = async (e) => {
     e.preventDefault();
+    const userId = await recupereDocumentId(userCollection, formLogin.email, formLogin.password)
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const userId = redirectWithId;
-        console.log("Logged in User ID:", userId);
+    signInWithEmailAndPassword(auth, formLogin.email, formLogin.password)
+    .then((userCredential) => {
+        // console.log("Logged in User ID:", userId);
         navigate(`/DashboardUser/${userId}`);
-        swal("Félicitation !", "Votre connexion a été éffectuer avec succes !", "success")
-      })
-      .catch((e) => {
-        setError(true);
-      });
+        swal("Félicitation !", "Votre connexion a été effectuée avec succès !", "success");
+    })
+    .catch((e) => {
+      setError(true);
+    });
+    
   };
-
-  const loginGoogle = async () => {
-    try {
-      await signOut(auth, googleProvider);
-      const userId = redirectWithId;
-      console.log("Logged in User ID:", userId);
-      swal("Félicitation !", "Votre connexion a été éffectuer avec succes !", "success")
-      navigate(`/DashboardUser/${userId}`);
-    } catch (er) {
-      console.error(er);
-    }
-  };
-
-  async function getId(userCollection) {
-    try {
-      const snapshot = await getDocs(userCollection);
-      for (const doc of snapshot.docs) {
-        const docData = doc.data();
-        const userId = await recupereDocumentId(userCollection, docData.nom, docData.email, docData.prenom);
-        if (userId) {
-          return userId;
-        }
-      }
-      console.log("Aucun document trouvé avec le nom et l'email spécifiés.");
-      return null;
-    } catch (error) {
-      console.error("Une erreur s'est produite lors de la récupération des documents :", error);
-      return null;
-    }
-  }
-
-  async function recupereDocumentId(userCollection, nom, email, prenom) {
+  
+  async function recupereDocumentId(userCollection, email, password) {
     try {
       const querySnapshot = await getDocs(userCollection);
       for (const doc of querySnapshot.docs) {
         const documentData = doc.data();
         const documentId = doc.id;
-
-        if (documentData.nom === nom && documentData.prenom === prenom && documentData.email === email) {
+        if (documentData.email === email && documentData.password === password) {
           console.log(documentId, 'only id');
           return documentId;
         }
       }
-      console.log("Aucun document trouvé avec le nom et l'email spécifiés.");
+      console.log("Aucun document trouvé avec l'email et le mot de passe spécifiés.");
       return null;
     } catch (error) {
       console.error("Une erreur s'est produite lors de la récupération des documents :", error);
       return null;
     }
   }
+  const loginGoogle = async () => {
+    try {
+      
+      const emailGoogle = await signInWithGoogle();
+      const userId = await recupereGoogle(userCollection, emailGoogle)
+      await signOut(auth, googleProvider);
+    
+      swal("Félicitation !", "Votre connexion a été éffectuer avec succes !", "success")
+      navigate(`/DashboardUser/${userId}`);
+    } catch (er) {
+      console.error(er);
+    }
+    
+  };
+  const signInWithGoogle = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const { user } = result;
+      return user.email;
+    } catch (error) {
+      console.error("Error signing in with Google:", error);
+      throw error;
+    }
+  };
+
+
+  async function recupereGoogle(userCollection, email) {
+    try {
+      const querySnapshot = await getDocs(userCollection);
+      for (const doc of querySnapshot.docs) {
+        const documentData = doc.data();
+        const documentId = doc.id;
+        if (documentData.email === email) {
+          return documentId;
+        }
+      }
+      console.log("Aucun document trouvé avec l'email et le mot de passe spécifiés.");
+      return null;
+    } catch (error) {
+      console.error("Une erreur s'est produite lors de la récupération des documents :", error);
+      return null;
+    }
+  }
+  
+  
 
       
     return (
@@ -100,14 +115,14 @@ const Login = () => {
             <label>Email </label></div>
             <div className="inputForm">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 32 32" height="20"><g data-name="Layer 3" id="Layer_3"><path d="m30.853 13.87a15 15 0 0 0 -29.729 4.082 15.1 15.1 0 0 0 12.876 12.918 15.6 15.6 0 0 0 2.016.13 14.85 14.85 0 0 0 7.715-2.145 1 1 0 1 0 -1.031-1.711 13.007 13.007 0 1 1 5.458-6.529 2.149 2.149 0 0 1 -4.158-.759v-10.856a1 1 0 0 0 -2 0v1.726a8 8 0 1 0 .2 10.325 4.135 4.135 0 0 0 7.83.274 15.2 15.2 0 0 0 .823-7.455zm-14.853 8.13a6 6 0 1 1 6-6 6.006 6.006 0 0 1 -6 6z"></path></g></svg>
-              <input placeholder="Enter your Email" className="input" type="text" onChange={e=>setEmail(e.target.value)} />
+              <input placeholder="Enter your Email" className="input" name="email" value={email} type="text" onChange={handleChange} />
             </div>
           
           <div className="flex-column">
             <label>Password </label></div>
             <div className="inputForm">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="-64 0 512 512" height="20"><path d="m336 512h-288c-26.453125 0-48-21.523438-48-48v-224c0-26.476562 21.546875-48 48-48h288c26.453125 0 48 21.523438 48 48v224c0 26.476562-21.546875 48-48 48zm-288-288c-8.8125 0-16 7.167969-16 16v224c0 8.832031 7.1875 16 16 16h288c8.8125 0 16-7.167969 16-16v-224c0-8.832031-7.1875-16-16-16zm0 0"></path><path d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0"></path></svg>        
-              <input placeholder="Enter your Password" className="input" type="password" onChange={e=>setPassword(e.target.value)}/>
+              <input placeholder="Enter your Password" className="input" type="password" name="password" value={password} onChange={handleChange}/>
             </div>
           
           <div className="flex-row">
