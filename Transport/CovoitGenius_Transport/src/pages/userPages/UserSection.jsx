@@ -21,6 +21,7 @@ export default function Dashboard() {
   const [currentSection, setCurrentSection] = useState(1);
   const [currentSubSection, setCurrentSubSection] = useState(5);
   const [userInfo, setUserInfo] = useState(null);
+  const [updateTrigger, setUpdateTrigger] = useState(false);
   let { id } = useParams();
   console.log('ID:', id);
   const changeContent = (section) => {
@@ -48,7 +49,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     GetInfosUser(id);
-  }, [id]);
+  }, [id,updateTrigger]);
 
   
   return (
@@ -64,6 +65,7 @@ export default function Dashboard() {
           <h2>Informations de l'utilisateur</h2>
           <p>Nom: {userInfo.nom}</p>
           <p>Email: {userInfo.email}</p>
+          {/* <p>photo: <img src={userInfo.photo} alt="" /></p> */}
         </div>
       )}
       </div>
@@ -113,12 +115,13 @@ export default function Dashboard() {
           <div className="section1-moove">
           <div className="card1" id="section8" style={{ display: currentSubSection === 8 ? 'block' : 'none' }}>
               <h3 className="section-title">Section 8</h3>
-              <UserInfos />
+              {id && <UserInfos userId={id}  />}
             </div>
             
             <div className="card1" id="section9" style={{ display: currentSubSection === 9 ? 'block' : 'none' }}>
               <h3 className="section-title">Section 6</h3>
-              <Photo />
+             
+              {id && <Photo userId={id}  />}
             </div>
             
             <div className="card1" id="section10" style={{ display: currentSubSection === 10 ? 'block' : 'none' }}>

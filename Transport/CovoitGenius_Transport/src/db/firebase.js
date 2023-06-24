@@ -28,4 +28,4 @@ const reservationCollection = collection(db, "reservations");
 const historiquesAnnonces=collection(db, "historiques_annonces");
 const historiquesReservations=collection(db, "historiques_reservations");
 
-export {db, auth, userCollection,createUserWithEmailAndPassword,addDoc,signInWithEmailAndPassword,getDocs,updateDoc, doc, deleteDoc ,getDoc,googleProvider,signInWithPopup,signOut,annonceCollection,historiquesAnnonces,reservationCollection,historiquesReservations}
+export {db, auth, userCollection,createUserWithEmailAndPassword,addDoc,signInWithEmailAndPassword,getDocs,getDoc,updateDoc, doc, deleteDoc ,googleProvider,signInWithPopup,signOut,annonceCollection,historiquesAnnonces,reservationCollection,historiquesReservations}

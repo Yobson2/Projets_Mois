@@ -20,8 +20,13 @@ import {auth,createUserWithEmailAndPassword,addDoc,userCollection,googleProvider
       
         setFormData({
           ...formData,
-          [e.target.name]: e.target.value
+          [e.target.name]: e.target.value,
+          dateNaissance:"auto",
+          sexe:"auto",
+          tel:"auto",
+          photo:"auto",
         });
+        // console.log('formData',formData)
       };
       const resetForm = () => {
         setFormData({
@@ -62,7 +67,10 @@ import {auth,createUserWithEmailAndPassword,addDoc,userCollection,googleProvider
             nom: dernierMot(user.displayName),
             prenom: motsSaufUn(user.displayName),
             email: user.email,
-            photo:user.photoURL
+            photo:user.photoURL,
+            dateNaissance:"auto",
+            sexe:"auto",
+            tel:"auto",
           };
            
           console.log( user.photoURL,"my add google")
