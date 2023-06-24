@@ -166,7 +166,8 @@ export default function Dashboard() {
             
             <div className="card1" id="section14" style={{ display: currentSubSection === 14 ? 'block' : 'none' }}>
               <h3 className="section-title">/Historiques</h3>
-              <Historiques2 />
+           
+              {id && <Historiques2  userId={id} />}
             </div>
             
           </div>

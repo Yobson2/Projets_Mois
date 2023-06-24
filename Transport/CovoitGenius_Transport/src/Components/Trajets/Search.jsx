@@ -45,7 +45,7 @@ function Search({userId}) {
     try {
       const annonceQuerySnapshot = await getDocs(annonceCollection);
       const userData = annonceQuerySnapshot.docs.map((doc) => doc.data());
-      console.log('Search data',userData)
+      // console.log('Search data',userData)
       
       const filteredData = userData.filter(
         (data) =>
@@ -85,14 +85,11 @@ function Search({userId}) {
         date_reservation: getCurrentDate(),
         ...infos
       })
-      // console.log('infos',infos);
-      // console.log('isReserve',isReserve);
-      console.log('-est',hasReservation)
       if (!infos.hasReservation) {
         // Effectuez la réservation
         await addDoc(reservationCollection, isReserve);
         infos.hasReservation = true;
-        console.log('test', infos.hasReservation);
+        // console.log('test', infos.hasReservation);
         swal("Félicitations !", "Votre reservation a été effectuée avec succès !.", "success");
       } else {
         // console.log('Désolé, ');

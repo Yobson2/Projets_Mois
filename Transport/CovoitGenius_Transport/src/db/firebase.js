@@ -26,6 +26,6 @@ const userCollection = collection(db, "clients");
 const annonceCollection = collection(db, "annonces");
 const reservationCollection = collection(db, "reservations");
 const historiquesAnnonces=collection(db, "historiques_annonces");
+const historiquesReservations=collection(db, "historiques_reservations");
 
-
-export {db, auth, userCollection,createUserWithEmailAndPassword,addDoc,signInWithEmailAndPassword,getDocs,updateDoc, doc, deleteDoc ,getDoc,googleProvider,signInWithPopup,signOut,annonceCollection,historiquesAnnonces,reservationCollection}
+export {db, auth, userCollection,createUserWithEmailAndPassword,addDoc,signInWithEmailAndPassword,getDocs,updateDoc, doc, deleteDoc ,getDoc,googleProvider,signInWithPopup,signOut,annonceCollection,historiquesAnnonces,reservationCollection,historiquesReservations}

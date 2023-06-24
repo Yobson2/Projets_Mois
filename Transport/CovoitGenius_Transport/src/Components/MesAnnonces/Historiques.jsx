@@ -5,7 +5,6 @@ import {  getDocs, historiquesAnnonces } from '../../db/firebase';
 function Historiques({userId}) {
   const [userInfo, setUserInfo] = useState([]);
 
-  console.log('id historique',userId)
   async function GetHistoriquesAnnonces(id) {
     try {
       const querySnapshot = await getDocs(historiquesAnnonces);
@@ -13,7 +12,7 @@ function Historiques({userId}) {
         .filter(doc => doc.data().id_user === id)
         .map(doc => ({ documentId: doc.id, ...doc.data() }));
       setUserInfo(userInfos);
-      console.log("Historiques Annonces", userInfos);
+      // console.log("Historiques Annonces", userInfos);
     } catch (error) {
       console.error("Une erreur s'est produite lors de la récupération des documents :", error);
     }
