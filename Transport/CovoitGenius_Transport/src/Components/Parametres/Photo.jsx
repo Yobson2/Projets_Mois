@@ -3,7 +3,7 @@ import "../../styles/photo.css"
 
 import { getDoc, userCollection, doc, updateDoc } from '../../db/firebase';
 
-function Photo({ userId }) {
+function Photo({ userId,onUpdate }) {
 
   const [previewSrc, setPreviewSrc] = useState('');
 
@@ -23,6 +23,7 @@ function Photo({ userId }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     await updateImage(userId); 
+    onUpdate();
   };
 
   async function updateImage(userId) {
@@ -34,7 +35,7 @@ function Photo({ userId }) {
           photo: previewSrc || userDoc.data().photo
         };
         await updateDoc(userRef, updatedUser);
-        swal("Succès", "Informations mises à jour !", "success");
+        console.log("Succès", "Informations mises à jour !", "success");
         setPreviewSrc('');
       } else {
         swal("Erreur", "Utilisateur non trouvé.", "error");

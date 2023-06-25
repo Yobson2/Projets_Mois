@@ -46,6 +46,9 @@ export default function Dashboard() {
       console.error("Une erreur s'est produite lors de la récupération des documents :", error);
     }
   }
+  const handleUpdate = () => {
+    setUpdateTrigger(!updateTrigger);
+  };
 
   useEffect(() => {
     GetInfosUser(id);
@@ -65,7 +68,7 @@ export default function Dashboard() {
           <h2>Informations de l'utilisateur</h2>
           <p>Nom: {userInfo.nom}</p>
           <p>Email: {userInfo.email}</p>
-          {/* <p>photo: <img src={userInfo.photo} alt="" /></p> */}
+          <p>photo: <img src={userInfo.photo} alt="" /></p>
         </div>
       )}
       </div>
@@ -121,7 +124,7 @@ export default function Dashboard() {
             <div className="card1" id="section9" style={{ display: currentSubSection === 9 ? 'block' : 'none' }}>
               <h3 className="section-title">Section 6</h3>
              
-              {id && <Photo userId={id}  />}
+              {id && <Photo userId={id}  onUpdate={handleUpdate} />}
             </div>
             
             <div className="card1" id="section10" style={{ display: currentSubSection === 10 ? 'block' : 'none' }}>
