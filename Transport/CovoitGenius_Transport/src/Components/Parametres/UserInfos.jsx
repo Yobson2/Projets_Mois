@@ -3,7 +3,7 @@ import "../../styles/UserInfos.css"
 
 import {  getDocs,getDoc, userCollection,doc,updateDoc,createUserWithEmailAndPassword,auth} from '../../db/firebase';
 
-function UserInfos({userId}) {
+function UserInfos({userId,onUpdate}) {
   const [formUpdate, setFormUpdate] = useState({
     nom: "",
     prenom: "",
@@ -35,6 +35,7 @@ function UserInfos({userId}) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     await updateElement(userId)
+    onUpdate();
   };
   async function updateElement(userId){
     

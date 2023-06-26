@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "../../styles/historiques.css";
 import {  getDocs, historiquesReservations } from '../../db/firebase';
 
-function Historiques2({userId}) {
+function Historiques2({userId,onUpdate}) {
   const [userInfo, setUserInfo] = useState([]);
   
   async function GetHistoriquesReservations(id) {
@@ -12,6 +12,7 @@ function Historiques2({userId}) {
         .filter(doc => doc.data().id_user_reservation === id)
         .map(doc => ({ documentId: doc.id, ...doc.data() }));
       setUserInfo(userInfos);
+      onUpdate();
     } catch (error) {
       console.error("Une erreur s'est produite lors de la récupération des documents :", error);
     }

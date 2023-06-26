@@ -7,7 +7,7 @@ function Header() {
   return (
     
           <header className="site-header">
-            {/* <img src="../../../public/Images/7572771.jpg" alt="" /> */}
+            <img src="../../../public/Images/forgot-password.png" alt="" />
             <NavSection />
             <div className="pub-header">
               <h1>Plateforme de Covoiturage Personnalisé</h1>

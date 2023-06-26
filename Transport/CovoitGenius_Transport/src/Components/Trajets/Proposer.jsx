@@ -72,6 +72,7 @@ function Proposer({ userId }) {
       }
     }
     GetInfosUser(userId);
+   
   }, [userId]);
 
  

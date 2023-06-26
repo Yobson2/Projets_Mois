@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getDocs,reservationCollection,doc, deleteDoc,addDoc,historiquesReservations } from '../../db/firebase';
 import "../../styles/reservationEncours.css"
 
-function Encours2({ userId }) {
+function Encours2({ userId,onUpdate }) {
   const [userInfo, setUserInfo] = useState([]);
 
   async function GetInfosUser(userId) {
@@ -48,7 +48,7 @@ function Encours2({ userId }) {
       // Mettre à jour l'état pour refléter les changements
       const updatedUserInfo = userInfo.filter(info => info.documentId !== documentId);
       setUserInfo(updatedUserInfo);
-  
+      onUpdate();
     } catch (error) {
       console.error("Une erreur s'est produite lors de la suppression de l'élément :", error);
     }

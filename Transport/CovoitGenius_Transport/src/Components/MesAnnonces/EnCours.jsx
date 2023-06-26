@@ -3,7 +3,7 @@ import { getDocs, annonceCollection,doc, deleteDoc,historiquesAnnonces,addDoc } 
 
 import '../../styles/AnnoncesEncours.css';
 
-function AnnoncesEncours({ userId }) {
+function AnnoncesEncours({ userId,onUpdate }) {
   const [userInfo, setUserInfo] = useState([]);
 
   async function GetInfosUser(userId) {
@@ -44,6 +44,7 @@ function AnnoncesEncours({ userId }) {
       if (elementFin) {
          await addDoc(historiquesAnnonces, elementFin);
         console.log('Élément archivé avec succès !');
+       
       }
       
       // Supprimer l'élément de la collection d'origine
@@ -52,7 +53,7 @@ function AnnoncesEncours({ userId }) {
       // Mettre à jour l'état pour refléter les changements
       const updatedUserInfo = userInfo.filter(info => info.documentId !== documentId);
       setUserInfo(updatedUserInfo);
-  
+      onUpdate();
     } catch (error) {
       console.error("Une erreur s'est produite lors de la suppression de l'élément :", error);
     }

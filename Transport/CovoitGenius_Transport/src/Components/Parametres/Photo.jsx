@@ -35,7 +35,7 @@ function Photo({ userId,onUpdate }) {
           photo: previewSrc || userDoc.data().photo
         };
         await updateDoc(userRef, updatedUser);
-        console.log("Succès", "Informations mises à jour !", "success");
+        swal("Succès", "Informations mises à jour !", "success");
         setPreviewSrc('');
       } else {
         swal("Erreur", "Utilisateur non trouvé.", "error");

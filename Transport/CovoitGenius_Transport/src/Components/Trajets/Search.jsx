@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "../../styles/search.css";
 import { annonceCollection,addDoc, getDocs,reservationCollection } from '../../db/firebase';
 
-function Search({userId}) {
+function Search({userId,onUpdate}) {
   const [er, setErrorChamps] = useState(true);
   const [idElement, setIdElement] = useState([]);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -59,6 +59,7 @@ function Search({userId}) {
       setIdElement(filteredData);
      
       console.log(filteredData, '++++++');
+      onUpdate();
 
       console.log("Opération terminée");
     } catch (error) {
@@ -91,6 +92,7 @@ function Search({userId}) {
         infos.hasReservation = true;
         // console.log('test', infos.hasReservation);
         swal("Félicitations !", "Votre reservation a été effectuée avec succès !.", "success");
+        onUpdate();
       } else {
         // console.log('Désolé, ');
         swal("Désolé", "vous avez déjà effectué une réservation.", "error")
