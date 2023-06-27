@@ -41,16 +41,10 @@ function Nav() {
         </button>
         <ul className={`nav__wrapper ${isActive ? 'active' : ''}`}>
           <li className="nav__item">
-            <Link to="/">Home</Link>
+            <Link to="/login" className='liens'>Se connecter</Link>
           </li>
           <li className="nav__item">
-            <Link to="/trajet">Apropos</Link>
-          </li>
-          <li className="nav__item">
-            <Link to="/trajet">Contact</Link>
-          </li>
-          <li className="compte">
-            <Link to="/login">Mon profit</Link>
+            <Link to="/registre" className='liens'>S'inscrire</Link>
           </li>
         </ul>
       </nav>

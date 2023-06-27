@@ -3,6 +3,7 @@
 .brand {
     font-weight: bold;
     font-size: 20px;
+   
   }
   
   .site-header {
@@ -12,6 +13,7 @@
     height: 100vh;
     object-fit: cover;
     z-index: 1;
+    background-color: gray;
   }
   
   .site-header > img {
@@ -54,9 +56,10 @@
     display: table-cell;
     vertical-align: middle;
     font-family: monospace;
-    font-size: 2rem;
-    line-height: 1.4;
-    color: blue;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: bold;
+    color:  #00aff5;
   }
   
   .site-header__start {
@@ -72,46 +75,40 @@
     border-radius: 50px;
   }
   
-  .nav__item > a {
-    color: blue;
+  .nav__item > .liens {
+    position: relative;
+    display: inline-block;
+    margin: 15px;
+    padding: 5px 6px;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1px;
     text-decoration: none;
+    color: #00aff5;
+    background: transparent;
     cursor: pointer;
-    font-size: 20px;
+    transition: ease-out 0.5s;
+    border: 2px solid #00aff5;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #00aff5;
+  }
+  .nav__item > .liens:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #00aff5;
   }
   
-  .compte > a {
-    color: blue;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 20px;
+  .nav__item > .liens:active {
+    transform: scale(0.9);
   }
   
-  .nav__item > a:hover,
+
+  /* .nav__item > a:hover,
   .compte:hover {
     color: #c9c9c9;
     transition: all 0.3s;
     border-bottom: 1px solid #c9c9c9;
-  }
+  } */
   
-  .compte {
-    width: 100px;
-    border-radius: 40px;
-    height: 50px;
-    padding: 0 30px;
-    background: #e8e8e8;
-    user-select: none;
-    white-space: nowrap;
-    transition: all .05s linear;
-    font-family: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .compte:hover {
-    background-color: #d9f9e3;
-    color: #c9c9c9;
-  }
   
   .pub-header {
     position: absolute;
@@ -217,12 +214,9 @@
   }
   
   @media (max-width: 913px) {
-     .nav__item > a{
+     .nav__item > .liens{
       font-size: 18px;
      }
-     .compte > a{
-        font-size: 18px;
-       }
 }
 
   @media (max-width: 883px) {
@@ -234,12 +228,6 @@
        }
        .pub-header p{
         font-size: 16px;
-       }
-       .nav__item > a{
-        font-size: 15px;
-       }
-       .compte > a{
-        font-size: 15px;
        }
        .logo-texte > h3{
         font-size: 20px;
@@ -258,6 +246,68 @@
     .logo-texte > h3{
      font-size: 16px;
     }
+    .liens{
+      border: none;
+      border: 2px solid orange;
+    }
 }
+
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  margin-top: 30px;
+ }
+ 
+ .cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+ }
+ 
+ .cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+ }
+ 
+ .cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+ }
+ 
+ .cta:hover:before {
+  width: 100%;
+  background: #b1dae7;
+ }
+ 
+ .cta:hover svg {
+  transform: translateX(0);
+ }
+ 
+ .cta:active {
+  transform: scale(0.95);
+ }
 
   
