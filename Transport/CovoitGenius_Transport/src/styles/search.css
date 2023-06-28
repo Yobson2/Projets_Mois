@@ -29,7 +29,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  background-color: #555;
+  background-color: #87ceeb;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -100,6 +100,8 @@
 }
 .liste-el-recherche p{
   text-align: center;
+  font-size: 15px;
+  margin-bottom: 15px;
 }
 
 .structures {
@@ -109,16 +111,15 @@
 }
 
 .blocs-listes {
-  /* background-color: #fff; */
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 0.75rem;
   margin: 10px;
   width: 300px;
   color: black;
 }
 
 .cards-listes {
-  background-color: #f2f2f2;
+  background-color: #87ceeb;
   padding: 10px;
 }
 
@@ -141,6 +142,7 @@
 
 .infos {
   padding: 10px;
+  background-color: #f2f2f2;
 }
 
 .infos-row1 {

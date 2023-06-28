@@ -31,21 +31,16 @@ function Search({userId,onUpdate}) {
     });
   };
 
-  // console.log('formData 2', formSearch);
-
   const handleSearch = async (e) => {
     e.preventDefault();
-    // console.log('formData soumis  11', formSearch);
     setIsFormSubmitted(true);
     await GetInfosUser();
-    // resetForm()
   };
 
   async function GetInfosUser() {
     try {
       const annonceQuerySnapshot = await getDocs(annonceCollection);
       const userData = annonceQuerySnapshot.docs.map((doc) => doc.data());
-      // console.log('Search data',userData)
       
       const filteredData = userData.filter(
         (data) =>
@@ -58,10 +53,7 @@ function Search({userId,onUpdate}) {
 
       setIdElement(filteredData);
      
-      console.log(filteredData, '++++++');
       onUpdate();
-
-      console.log("Opération terminée");
     } catch (error) {
       console.error(
         "Une erreur s'est produite lors de la récupération des documents :",
@@ -90,11 +82,9 @@ function Search({userId,onUpdate}) {
         // Effectuez la réservation
         await addDoc(reservationCollection, isReserve);
         infos.hasReservation = true;
-        // console.log('test', infos.hasReservation);
         swal("Félicitations !", "Votre reservation a été effectuée avec succès !.", "success");
         onUpdate();
       } else {
-        // console.log('Désolé, ');
         swal("Désolé", "vous avez déjà effectué une réservation.", "error")
       }
     } catch (errs) {
@@ -157,7 +147,7 @@ function Search({userId,onUpdate}) {
                       </div>
                       <div className="infos-places">
                           <p><span>{infos.Nombre_de_Places} </span> places</p>
-                            <button className="btn-infos"><span>12</span>Fcfa</button>
+                            <button className="btn-infos"><span>{infos.Montant}</span>Fcfa</button>
                           </div>
                     </div>
                     <button className="btn-infos" onClick={() => doReservation(infos)}>Réservez</button>

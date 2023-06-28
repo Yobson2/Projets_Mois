@@ -52,7 +52,6 @@ import {auth,createUserWithEmailAndPassword,addDoc,userCollection,googleProvider
           const data = await addDoc(userCollection, userData);
           swal("Félicitation !", "Votre inscription a été éffectuer avec succes !", "success")
           resetForm();
-          console.log(userData, 'my Sign');
         } catch (e) {
           setErrorChamps(true);
         }
@@ -73,7 +72,6 @@ import {auth,createUserWithEmailAndPassword,addDoc,userCollection,googleProvider
             tel:"auto",
           };
            
-          console.log( user.photoURL,"my add google")
           const data = await addDoc(userCollection, userData);
           swal("Félicitation !", "Votre inscription a été éffectuer avec succes !", "success")
         } catch (errs) {

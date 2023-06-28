@@ -13,11 +13,12 @@ function Proposer({ userId }) {
     Heure: "",
     Nombre_de_Places: "",
     Taille_des_bagages: "",
-    Préférences: ""
+    Préférences: "",
+    Montant:"",
   });
 
 
-  const { Point_de_Départ, Destination, Date, Heure, Nombre_de_Places, Taille_des_bagages, Préférences } = formPropose;
+  const { Point_de_Départ, Destination, Date,Montant, Heure, Nombre_de_Places, Taille_des_bagages, Préférences } = formPropose;
 
   const handleChange = (e) => {
     setFormPropose({
@@ -37,14 +38,15 @@ function Proposer({ userId }) {
       Heure: "",
       Nombre_de_Places: "",
       Taille_des_bagages: "",
-      Préférences: ""
+      Préférences: "",
+      Montant:""
     });
 
   };
 
   const handleSign = async (e) => {
     e.preventDefault();
-    if (!Point_de_Départ || !Destination || !Date || !Heure || !Nombre_de_Places || !Taille_des_bagages || !Préférences) {
+    if (!Point_de_Départ || !Destination || !Date || !Heure || !Montant || !Nombre_de_Places || !Taille_des_bagages || !Préférences) {
       setErrorChamps(true);
       return;
     }
@@ -99,6 +101,10 @@ function Proposer({ userId }) {
         <div className="mb-4">
           <label for="seats" className="block mb-2">Nombre de Places</label>
           <input type="number" id="seats" name="Nombre_de_Places" value={Nombre_de_Places} min="1" max="4" className="w-full border border-gray-300 rounded py-2 px-3" onChange={handleChange} required=""/>
+        </div>
+        <div className="mb-4">
+          <label for="seats" className="block mb-2">Montant</label>
+          <input type='text' id="seats" name="Montant" value={Montant} className="w-full border border-gray-300 rounded py-2 px-3" onChange={handleChange} required=""/>
         </div>
         <div className="mb-4">
           <label for="seats" className="block mb-2">Taille des bagages</label>

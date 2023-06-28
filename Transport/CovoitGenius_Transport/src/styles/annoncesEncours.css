@@ -2,17 +2,17 @@
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: column;
 }
 
 .blocks-annonces-encours .card-annonces {
-    background-color: #f7f7f7;
+    /* background-color: #f7f7f7; */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 10px;
     width: 100%;
-    /* max-width: 600px; */
-    margin: 10px auto;
+    max-width: 500px;
+    margin-left: 20px;
+    /* margin: 10px auto; */
   }
   
   .card-header {
@@ -34,6 +34,10 @@
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    justify-content: space-between;
+  }
+  .card-data{
+    color: #007bff;
   }
   
   .info-label {
@@ -53,6 +57,7 @@
     justify-content: center;
     margin-top: 20px;
   }
+  
   
   .info-button {
     background-color: #007bff;

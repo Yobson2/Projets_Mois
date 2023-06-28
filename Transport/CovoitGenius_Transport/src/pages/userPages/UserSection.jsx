@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import {  useParams } from 'react-router-dom';
+import {  useParams,Link } from 'react-router-dom';
+
 import "../../styles/Dashboard.css";
-import NavSection from '../../Components/NavBar';
 import Chat from '../../Components/Trajets/Chat';
 import Proposer from '../../Components/Trajets/Proposer';
 import Search from '../../Components/Trajets/Search';
@@ -15,6 +15,7 @@ import Historiques from '../../Components/MesAnnonces/Historiques';
 import Encours2 from '../../Components/MesReservations/Encours';
 import Historiques2 from '../../Components/MesReservations/Historiques';
 
+import "../../styles/enteteDash.css";
 import {  getDocs, userCollection } from '../../db/firebase';
 
 export default function Dashboard() {
@@ -23,7 +24,6 @@ export default function Dashboard() {
   const [userInfo, setUserInfo] = useState(null);
   const [updateTrigger, setUpdateTrigger] = useState(false);
   let { id } = useParams();
-  console.log('ID:', id);
   const changeContent = (section) => {
     setCurrentSection(section);
     
@@ -42,14 +42,12 @@ export default function Dashboard() {
           setUserInfo(documentData);
         }
       }
-      // console.log("DashBoard");
     } catch (error) {
       console.error("Une erreur s'est produite lors de la récupération des documents :", error);
     }
   }
   const handleUpdate = () => {
     setUpdateTrigger(!updateTrigger);
-    console.log('state',updateTrigger)
   };
 
   useEffect(() => {
@@ -59,18 +57,24 @@ export default function Dashboard() {
   
   return (
     <div className='User-section'>
-      
-      {/* <NavSection /> */}
-      <h3>Dashboard user</h3>
-      
+       
       <div className="banner">
-        <h1>User Dashboard</h1>
         {userInfo && (
         <div>
-          <h2>Informations de l'utilisateur</h2>
-          <p>Nom: {userInfo.nom}</p>
-          <p>Email: {userInfo.email}</p>
-          {/* <p>photo: <img src={userInfo.photo} alt="" /></p> */}
+           <div className="wrapper-entete site-header__wrapper">
+        <div className="logo-texte">
+          <div className="site-header__dash">
+          <img src={userInfo.photo} alt="" />
+          </div>
+           <div class="textContainer">
+            <p class="name">{userInfo.nom}</p>
+            <p class="profile">{userInfo.prenom}</p>
+          </div>
+        </div>
+        <div className="site-header__middle">
+          <Nav />
+        </div>
+      </div>
         </div>
       )}
       </div>
@@ -94,18 +98,18 @@ export default function Dashboard() {
 
           <div className="section1-moove">
             <div className="card1" id="section5" style={{ display: currentSubSection === 5 ? 'block' : 'none' }}>
-              {/* <h3 className="section-title">Section 5</h3> */}
+              <h3 className="section-title"><i class="fa-regular fa-hand-point-right"></i>chercher</h3>
 
                {id && <Search userId={id} onUpdate={handleUpdate}/>}
             </div>
             
             <div className="card1" id="section6" style={{ display: currentSubSection === 6 ? 'block' : 'none' }}>
-              <h3 className="section-title">Section 6</h3>
+              <h3 className="section-title"><i class="fa-regular fa-hand-point-right"></i>Proposer</h3>
               {id && <Proposer userId={id} onUpdate={handleUpdate}/>}
             </div>
             
             <div className="card1" id="section7" style={{ display: currentSubSection === 7 ? 'block' : 'none' }}>
-              <h3 className="section-title">Section 7</h3>
+              <h3 className="section-title"><i class="fa-regular fa-hand-point-right"></i>communauté</h3>
               <Chat />
             </div>
           </div>
@@ -119,19 +123,14 @@ export default function Dashboard() {
           </div>
           <div className="section1-moove">
           <div className="card1" id="section8" style={{ display: currentSubSection === 8 ? 'block' : 'none' }}>
-              <h3 className="section-title">Section 8</h3>
+              <h3 className="section-title"><i class="fa-regular fa-hand-point-right"></i>informations personnelles</h3>
               {id && <UserInfos userId={id}  onUpdate={handleUpdate}/>}
             </div>
             
             <div className="card1" id="section9" style={{ display: currentSubSection === 9 ? 'block' : 'none' }}>
-              <h3 className="section-title">Section 6</h3>
+              <h3 className="section-title"><i class="fa-regular fa-hand-point-right"></i>Photo</h3>
              
               {id && <Photo userId={id}  onUpdate={handleUpdate} />}
-            </div>
-            
-            <div className="card1" id="section10" style={{ display: currentSubSection === 10 ? 'block' : 'none' }}>
-              <h3 className="section-title">Section 10</h3>
-              <p>Vehicule</p>
             </div>
           </div>
           
@@ -146,13 +145,13 @@ export default function Dashboard() {
             <p>Retrouvez ici vos annonces en cours ainsi que celles dans l'historiques</p>
           <div className="card1" id="section11" style={{ display: currentSubSection === 11 ? 'block' : 'none' }}>
              
-              <h3 className="section-title">/En cours</h3>
+              <h3 className="section-title"><i class="fa-regular fa-hand-point-right"></i>En cours</h3>
               
               {id && <AnnoncesEncours userId={id} onUpdate={handleUpdate}/>}
             </div>
             
             <div className="card1" id="section12" style={{ display: currentSubSection === 12 ? 'block' : 'none' }}>
-              <h3 className="section-title">/Historiques</h3>
+              <h3 className="section-title"><i class="fa-regular fa-hand-point-right"></i>Historiques</h3>
               
               {id && <Historiques userId={id} onUpdate={handleUpdate}/>}
             </div>
@@ -168,12 +167,12 @@ export default function Dashboard() {
           <div className="section1-moove">
           <p>Retrouvez ici vos reservations en cours ainsi que celles dans l'historiques</p>
           <div className="card1" id="section13" style={{ display: currentSubSection === 13 ? 'block' : 'none' }}>
-              <h3 className="section-title">/En cours</h3>
+              <h3 className="section-title"><i class="fa-regular fa-hand-point-right"></i>En cours</h3>
               {id && <Encours2 userId={id} onUpdate={handleUpdate}/>}
             </div>
             
             <div className="card1" id="section14" style={{ display: currentSubSection === 14 ? 'block' : 'none' }}>
-              <h3 className="section-title">/Historiques</h3>
+              <h3 className="section-title"><i class="fa-regular fa-hand-point-right"></i>Historiques</h3>
            
               {id && <Historiques2  userId={id} onUpdate={handleUpdate}/>}
             </div>
@@ -185,4 +184,33 @@ export default function Dashboard() {
    
   );
 }
+function Nav() {
+  const [isActive, setIsActive] = useState(false);
+
+  const handleToggle = () => {
+    setIsActive(!isActive);
+  };
+
+  return (
+    <nav className="nav">
+      <button
+        className={`nav__toggle_dah ${isActive ? 'active' : ''}`}
+        onClick={handleToggle}
+        aria-expanded={isActive ? 'true' : 'false'}
+        aria-label={isActive ? 'close menu' : 'menu'}
+      >
+        {isActive ? 'X' : <i className="fa-sharp fa-solid fa-bars"></i>}
+      </button>
+      <ul className={`nav__wrapper_dash ${isActive ? 'active' : ''}`}>
+        <li className="nav__item">
+          <Link  className='liens'>Mon profit</Link>
+        </li>
+        <li className="nav__item">
+          <Link  className='liens'>Deconnexion</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+}
+
 
