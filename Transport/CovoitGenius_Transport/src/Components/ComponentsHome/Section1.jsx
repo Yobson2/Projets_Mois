@@ -1,5 +1,6 @@
 import React from 'react';
 import "../../styles/StyleComponentsHome/section1.css";
+import { Link } from 'react-router-dom';
 
 export default function Section1() {
   return (
@@ -17,7 +18,7 @@ export default function Section1() {
           <li><img src="../../public/Logo/icons8-check-50.png" alt="" /><span>Réduction du trafic et de la congestion</span></li>
         </ul>
 
-        <button className="section1_btn"><span>Commencer</span></button>
+        <Link to="/login" className="section1_btn"><span>Commencer</span></Link>
       </div>
     </div>
   );

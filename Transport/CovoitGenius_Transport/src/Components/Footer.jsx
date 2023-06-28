@@ -16,9 +16,9 @@ class Footer extends React.Component {
               </div>
               <div class="footer-links">
                 <ul>
-                  <li><a href="#">Accueil</a></li>
-                  <li><a href="#">A propos</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">S'inscrire</a></li>
+                  <li><a href="#">Se connecter</a></li>
                 </ul>
               </div>
               <div class="footer-social">

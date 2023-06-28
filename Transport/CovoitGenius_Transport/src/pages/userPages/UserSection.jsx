@@ -203,10 +203,10 @@ function Nav() {
       </button>
       <ul className={`nav__wrapper_dash ${isActive ? 'active' : ''}`}>
         <li className="nav__item">
-          <Link  className='liens'>Mon profit</Link>
+          <Link  className='liens'>Aperçu</Link>
         </li>
         <li className="nav__item">
-          <Link  className='liens'>Deconnexion</Link>
+          <Link to="/" className='liens'>Deconnexion</Link>
         </li>
       </ul>
     </nav>

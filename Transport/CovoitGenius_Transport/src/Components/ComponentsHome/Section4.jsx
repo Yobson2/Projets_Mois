@@ -12,7 +12,7 @@ export default function Section4() {
   <div className="section4-blocks">
     <div className="content-section4">
       <div className="content-image4">
-        <img src="https://www.dropbox.com/s/tclqbz7o4u8e705/ipad-632394_640.jpg?raw=1" alt="Image 1" />
+        <img src="https://media.istockphoto.com/id/1458537591/fr/photo/lhomme-fait-lexamen-en-ligne-sur-l%C3%A9cran-virtuel-r%C3%A9pondez-%C3%A0-un-sondage-en-remplissant-un.webp?b=1&s=170667a&w=0&k=20&c=FUDNtLuWeAoAIp1yNFo-TFYzUbQHsIUN3PJfFpQfnAI=" alt="Image 1" />
       </div>
       <div className="content-infos4">
         <h3>Utilisateurs inscrits</h3>
@@ -21,7 +21,7 @@ export default function Section4() {
     </div>
     <div className="content-section4">
       <div className="content-image4">
-        <img src="https://www.dropbox.com/s/tclqbz7o4u8e705/ipad-632394_640.jpg?raw=1" alt="Image 2" />
+        <img src="https://media.istockphoto.com/id/932645662/fr/photo/voitures-sur-route-asphalt%C3%A9e-en-%C3%A9t%C3%A9.webp?b=1&s=170667a&w=0&k=20&c=H0b2XNCiYje9b15mhJHVDN5wvEhn-moY-pKr0K62WbI=" alt="Image 2" />
       </div>
       <div className="content-infos4">
         <h3>Trajets effectués</h3>
@@ -30,7 +30,7 @@ export default function Section4() {
     </div>
     <div className="content-section4">
       <div className="content-image4">
-        <img src="https://www.dropbox.com/s/tclqbz7o4u8e705/ipad-632394_640.jpg?raw=1" alt="Image 3" />
+        <img src="https://media.istockphoto.com/id/1403692324/fr/photo/volant-moderne-de-behine-de-tableau-de-bord-ev.webp?b=1&s=170667a&w=0&k=20&c=S6dK0GDYMHNRqORiGrbXr2p1xpRzzfCfIGKH-Gpiyng=" alt="Image 3" />
       </div>
       <div className="content-infos4">
         <h3>Économie de carburant</h3>
