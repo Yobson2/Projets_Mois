@@ -1,5 +1,6 @@
 import React from 'react';
-import '../styles/footer.css'
+import '../styles/footer.css';
+import logo from '../assets/Logo/Carrios.png';
 
 
 
@@ -11,7 +12,7 @@ class Footer extends React.Component {
           <div class="container">
             <div class="footer-content">
               <div class="footer-logo">
-                  <img src="../../public/Logo/Carrios.png" alt="Card" />
+                  <img src={logo} alt="Card" />
                 <h2>CovoitGenius</h2>
               </div>
               <div class="footer-links">

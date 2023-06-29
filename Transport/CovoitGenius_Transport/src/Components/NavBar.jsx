@@ -1,13 +1,15 @@
 // import  { useState } from 'react';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/Logo/Carrios.png';
+
  function NavSection() {
     return (
       <div className="wrapper site-header__wrapper">
         <div className="logo-texte">
           <div className="site-header__start">
             <img
-              src="../../../public/Logo/Carrios.png"
+              src={logo}
               alt=""
               className="brand"
             />

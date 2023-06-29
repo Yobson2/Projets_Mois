@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "../styles/login.css";
+import logo4 from '../assets/Images/login-page-img.png';
 import { auth, signInWithEmailAndPassword, signOut,googleProvider,signInWithPopup, getDocs, userCollection } from '../db/firebase';
 
 const Login = () => {
@@ -104,7 +105,7 @@ const Login = () => {
 
       <div className="contenaire-login">
       <div className="login-image">
-           <img src="../../public/Images/login-page-img.png" alt="" />
+           <img src={logo4} alt="" />
       </div>
       <form className="form" onSubmit={handleLogin}>
           <div className="entete-login">

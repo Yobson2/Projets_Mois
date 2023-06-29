@@ -1,6 +1,7 @@
 import '../styles/registre.css'
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logo3 from '../assets/Images/register-page-img.png';
 
 import {auth,createUserWithEmailAndPassword,addDoc,userCollection,googleProvider,signInWithPopup} from '../db/firebase';
 
@@ -84,7 +85,7 @@ import {auth,createUserWithEmailAndPassword,addDoc,userCollection,googleProvider
     return (
         <div className="contenaire-registre" >
             <div className="registre-image" id='registre-image'>
-                <img src="../../public/Images/register-page-img.png" alt="" />
+                <img src={logo3} alt="" />
             </div>
             <form className="form-registre" id='form-registre' onSubmit={handleSign}>
                 <p className="title" id='title'>Enregistrer</p>
